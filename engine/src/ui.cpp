@@ -39,6 +39,7 @@ void UI::Update()
     {
         if (ImGui::BeginMenu("File"))
         {
+            if (ImGui::MenuItem("Open", "CTRL+O")) {}
             ImGui::EndMenu();
         }
         if (ImGui::BeginMenu("Edit"))
@@ -103,7 +104,7 @@ ImVec4 UI::GetOffset()
     return offset;
 }
 
-UI::~UI()
+void UI::Shutdown() 
 {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();

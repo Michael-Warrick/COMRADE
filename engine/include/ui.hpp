@@ -18,10 +18,10 @@ private:
     ImVec4 offset = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 public:
     UI(GLFWwindow* window, const char* glVersion);
-    ~UI();
     void Update();
     void Render(GLFWwindow* window);
     ImVec4 GetOffset();
+    void Shutdown();
 };
 
 // void InitDPIScale(float scale, ImFont*& smallFont, ImFont*& fixedWidthFont, ImFont*& largeFont) 

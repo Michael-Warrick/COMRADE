@@ -12,9 +12,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-#ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
 
     int resolutionX = glfwGetVideoMode(glfwGetPrimaryMonitor())->width;
     int resolutionY = glfwGetVideoMode(glfwGetPrimaryMonitor())->height;
@@ -94,7 +92,8 @@ int main()
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-    ui.~UI();
+    
+    ui.Shutdown();
     glfwDestroyWindow(window);
     glfwTerminate();
     

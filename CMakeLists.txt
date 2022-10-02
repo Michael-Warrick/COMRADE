@@ -41,8 +41,8 @@ add_executable(${PROJECT_NAME}
 
 add_custom_target(copy_resources ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${PROJECT_SOURCE_DIR}/engine/resources/shaders
-    ${PROJECT_BINARY_DIR}/engine/resources/shaders
+    ${PROJECT_SOURCE_DIR}/engine/resources
+    ${PROJECT_BINARY_DIR}/engine/resources
     COMMENT "Copying resources into binary directory"
 )
 
@@ -56,7 +56,6 @@ target_include_directories(${PROJECT_NAME}
         glad
         glfw
         glm
-    PRIVATE
 )
 
 # As of right now, static linking is only available on Windows
