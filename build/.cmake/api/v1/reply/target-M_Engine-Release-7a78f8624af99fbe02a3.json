@@ -83,43 +83,43 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/imgui-docking"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/imgui-docking"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/imgui-docking/backends"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/imgui-docking/backends"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/.."
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/.."
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/include"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/include"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/glad"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/glad"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/glfw"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/glfw"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/glm"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/glm"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glad/include"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glfw/include"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glfw/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glm"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glm"
 				}
 			],
 			"language" : "CXX",

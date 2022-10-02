@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glm
+# Install script for directory: /Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glm/glm/cmake_install.cmake")
+  include("/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glm/glm/cmake_install.cmake")
 
 endif()
 

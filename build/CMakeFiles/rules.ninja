@@ -80,7 +80,7 @@ rule C_STATIC_LIBRARY_LINKER__glfw_Release
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/local/Cellar/cmake/3.24.2/bin/cmake --regenerate-during-build -S"/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine" -B"/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build"
+  command = /usr/local/Cellar/cmake/3.24.2/bin/cmake --regenerate-during-build -S"/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine" -B"/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build"
   description = Re-running CMake...
   generator = 1
 

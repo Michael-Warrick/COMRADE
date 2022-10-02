@@ -111,15 +111,15 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glfw/include"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glfw/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glfw/src"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glfw/src"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glfw/src"
+					"path" : "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/src"
 				}
 			],
 			"language" : "C",

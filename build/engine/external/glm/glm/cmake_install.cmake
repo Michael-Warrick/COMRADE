@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/engine/external/glm/glm
+# Install script for directory: /Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

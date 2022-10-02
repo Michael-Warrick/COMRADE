@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glfw/install_manifest.txt" files)
+file(READ "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

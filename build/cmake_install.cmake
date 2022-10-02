@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine
+# Install script for directory: /Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glad/cmake_install.cmake")
-  include("/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glfw/cmake_install.cmake")
-  include("/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/engine/external/glm/cmake_install.cmake")
+  include("/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/cmake_install.cmake")
+  include("/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/cmake_install.cmake")
+  include("/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glm/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/michaelwarrick/Documents/Projects/Game Engines/M_Engine/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
