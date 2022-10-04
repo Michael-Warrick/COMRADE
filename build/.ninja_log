@@ -1,55 +1,44 @@
 # ninja log v5
-31	108	0	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/CMakeFiles/copy_resources	9747003bb409d694
-5	1429	1664748771153783531	engine/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o	b0e954e16b38e22f
-1504	3159	1664748772872648536	engine/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o	a8ecb9336867f623
-6	1486	1664748771211244063	engine/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o	8bf34a80568b3334
-1749	3029	1664748772755171789	engine/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o	fcf57f2846f274f3
-39	1504	1664748771228221168	engine/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o	47b3e4800e634eb2
-2907	3439	1664748773170584388	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.o	699e02f13f76ae61
-3439	7627	1664748777353738632	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.o	7cc405ac1d8e91f5
-5	1608	1664748771333448267	engine/external/glfw/src/CMakeFiles/glfw.dir/init.c.o	f1fdfbe5b9b32720
-4	2556	1664748772170817356	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/include/glad/glad.h	27be9e11e166a6f0
-9	1749	1664748771464357155	engine/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o	6b78cf555fe46ea7
-2744	5645	1664748775369727988	CMakeFiles/M_Engine.dir/engine/src/ui.cpp.o	625322056bee148b
-5108	7798	1664748777515612046	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o	eac2bdcd156a5f17
-1435	2744	1664748772467841367	engine/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o	7cca1b61d7dbdc79
-31	108	0	CMakeFiles/copy_resources	9747003bb409d694
-4705	11364	1664748781094056796	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.o	c7ed5d33d1aafa0a
-4	1634	1664748771358983108	engine/external/glfw/src/CMakeFiles/glfw.dir/context.c.o	a0316c718b5c37ce
-3029	17507	1664748787238170968	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.o	8565148a4289f84c
-3160	8832	1664748778560676176	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.o	4f73a320bafeb6cd
-4	2556	1664748772170817356	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/src/glad.c	27be9e11e166a6f0
-5	2241	1664748771961109695	engine/external/glfw/src/CMakeFiles/glfw.dir/input.c.o	dd1addfee2dffeb7
-7	1906	1664748771629803612	engine/external/glfw/src/CMakeFiles/glfw.dir/window.c.o	ecda1e9b7bde5811
-108	1344	1664753171681728226	CMakeFiles/M_Engine.dir/engine/src/main.cpp.o	9175984704804391
-4	2556	1664748772170817356	engine/external/glad/include/glad/glad.h	27be9e11e166a6f0
-4	2556	1664748772170817356	engine/external/glad/src/glad.c	27be9e11e166a6f0
-5856	8113	1664748777830810154	engine/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o	734c9a4a46dc2566
-1487	2833	1664748772555825754	engine/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o	92199093695c7438
-5	1669	1664748771381192951	engine/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o	c75d45357cd0b524
-1608	2869	1664748772594589639	engine/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o	4af8d8122b30d12a
-5647	8527	1664748778245998984	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o	d376d80ff3747d0e
-1669	2910	1664748772613627451	engine/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o	d7599cc5ff8ee182
-7259	7369	1664748777106477000	engine/external/glad/libglad.a	8d4710696c87eee6
-1906	4702	1664748774419848032	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o	e0d7cf29eb2cb87b
-1634	2907	1664748772632453118	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o	5610a5d6117bea74
-4880	7259	1664748776988434078	engine/external/glad/CMakeFiles/glad.dir/src/glad.c.o	4a289d6adba2d2e7
-2869	5108	1664748774832552655	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.o	4fd2cc6a75feb740
-8527	8643	1664748778380422000	engine/external/glfw/src/libglfw3.a	179ea4990a052f37
-2241	4880	1664748774598613329	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o	35b09bf414c981d7
-2910	15223	1664748784952310658	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.o	62a793f5aec3cc32
-2833	12561	1664748782292456985	CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.o	aaeaf10d642073a
-1344	1537	1664753171869460250	M_Engine	94bba610ef88728
-23	63	0	CMakeFiles/copy_resources	9747003bb409d694
-23	63	0	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/CMakeFiles/copy_resources	9747003bb409d694
-64	568	1664753239770853417	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.o	699e02f13f76ae61
-64	2044	1664753241245614440	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.o	4fd2cc6a75feb740
-63	2386	1664753241587193198	CMakeFiles/M_Engine.dir/engine/src/ui.cpp.o	625322056bee148b
-63	2678	1664753241879720482	CMakeFiles/M_Engine.dir/engine/src/main.cpp.o	9175984704804391
-67	3272	1664753242477763457	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.o	7cc405ac1d8e91f5
-66	4337	1664753243542931483	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.o	4f73a320bafeb6cd
-67	5973	1664753245179986000	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.o	c7ed5d33d1aafa0a
-63	7790	1664753246998205513	CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.o	aaeaf10d642073a
-65	10436	1664753249642342126	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.o	62a793f5aec3cc32
-65	12607	1664753251813746962	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.o	8565148a4289f84c
-12607	12773	1664753251977213087	M_Engine	94bba610ef88728
+3	46	0	CMakeFiles/copy_resources	9747003bb409d694
+3	46	0	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/CMakeFiles/copy_resources	9747003bb409d694
+4	1403	1664923154767910176	engine/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o	b0e954e16b38e22f
+5	1505	1664923154869409622	engine/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o	8bf34a80568b3334
+48	1512	1664923154874703361	engine/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o	47b3e4800e634eb2
+4	1629	1664923154987176649	engine/external/glfw/src/CMakeFiles/glfw.dir/init.c.o	f1fdfbe5b9b32720
+4	1686	1664923155050585641	engine/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o	c75d45357cd0b524
+3	1689	1664923155049403717	engine/external/glfw/src/CMakeFiles/glfw.dir/context.c.o	a0316c718b5c37ce
+6	1810	1664923155167120692	engine/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o	6b78cf555fe46ea7
+5	1966	1664923155330272812	engine/external/glfw/src/CMakeFiles/glfw.dir/window.c.o	ecda1e9b7bde5811
+4	2425	1664923155788827982	engine/external/glfw/src/CMakeFiles/glfw.dir/input.c.o	dd1addfee2dffeb7
+1408	2806	1664923156161197234	engine/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o	7cca1b61d7dbdc79
+1506	2895	1664923156260224597	engine/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o	92199093695c7438
+1629	2931	1664923156296352096	engine/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o	4af8d8122b30d12a
+1689	2945	1664923156309300920	engine/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o	d7599cc5ff8ee182
+1687	2959	1664923156319071565	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o	5610a5d6117bea74
+1811	3070	1664923156434573583	engine/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o	fcf57f2846f274f3
+1512	3104	1664923156469176279	engine/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o	a8ecb9336867f623
+2425	4011	1664923157368864083	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o	35b09bf414c981d7
+1966	4017	1664923157375300025	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o	e0d7cf29eb2cb87b
+2931	4260	1664923157624517847	engine/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o	734c9a4a46dc2566
+3	4309	1664923157568647745	engine/external/glad/include/glad/glad.h	27be9e11e166a6f0
+3	4309	1664923157568647745	engine/external/glad/src/glad.c	27be9e11e166a6f0
+3	4309	1664923157568647745	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/include/glad/glad.h	27be9e11e166a6f0
+3	4309	1664923157568647745	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glad/src/glad.c	27be9e11e166a6f0
+2806	4326	1664923157675294768	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o	eac2bdcd156a5f17
+4317	4905	1664923158271733712	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.o	699e02f13f76ae61
+2895	5102	1664923158459620472	engine/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o	d376d80ff3747d0e
+4315	6643	1664923160003862156	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.o	4fd2cc6a75feb740
+6644	6772	1664923160151486000	engine/external/glfw/src/libglfw3.a	179ea4990a052f37
+5102	7412	1664923160782167427	engine/external/glad/CMakeFiles/glad.dir/src/glad.c.o	4a289d6adba2d2e7
+7412	7517	1664923160896287000	engine/external/glad/libglad.a	8d4710696c87eee6
+4312	7738	1664923161100377545	CMakeFiles/M_Engine.dir/engine/src/ui.cpp.o	625322056bee148b
+4309	8086	1664923161448785619	CMakeFiles/M_Engine.dir/engine/src/main.cpp.o	9175984704804391
+4327	8314	1664923161683417896	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.o	7cc405ac1d8e91f5
+4322	9472	1664923162842200187	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.o	4f73a320bafeb6cd
+4905	11411	1664923164781612325	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.o	c7ed5d33d1aafa0a
+4313	13188	1664923166560717349	CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.o	aaeaf10d642073a
+4319	15811	1664923169180318302	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.o	62a793f5aec3cc32
+4321	18040	1664923171411781876	CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.o	8565148a4289f84c
+18040	18201	1664923171569920239	M_Engine	94bba610ef88728
+28	72	0	CMakeFiles/copy_resources	9747003bb409d694
+28	72	0	/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/CMakeFiles/copy_resources	9747003bb409d694

@@ -35,6 +35,16 @@ void UI::Update()
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
+    MenuBar();
+    RenderOptionsWindow();
+    TransformComponentWindow();
+
+    glClearColor(clearColor.x * clearColor.w, clearColor.y * clearColor.w, clearColor.z * clearColor.w, clearColor.w);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void UI::MenuBar() 
+{
     if (ImGui::BeginMainMenuBar())
     {
         if (ImGui::BeginMenu("File"))
@@ -54,7 +64,10 @@ void UI::Update()
         }
         ImGui::EndMainMenuBar();
     }
+}
 
+void UI::RenderOptionsWindow() 
+{
     ImGui::Begin("Rendering Options");
         ImGui::ColorEdit3("Clear Color", (float*)&clearColor);
         ImGui::Separator();
@@ -65,15 +78,39 @@ void UI::Update()
         if (renderWireframe) { glLineWidth(3.0); glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); }
         else if (renderPoints) { glPointSize(5.0); glPolygonMode(GL_FRONT_AND_BACK, GL_POINT); }
         else { glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); }
-    ImGui::End();
 
+        ImGui::SliderFloat("Shader Mix", &mixAmount, 0.0f, 1.0f, "ratio = %.1f");
+        ImGui::Separator();
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        ImGui::Checkbox("Enable V-Sync", &vSyncEnabled);
+
+        if (vSyncEnabled) { glfwSwapInterval(1); }
+        else { glfwSwapInterval(0); }
+    ImGui::End();
+}
+
+void UI::TransformComponentWindow() 
+{
+    // Pushing of the ID allows for having a DragFloat3 of the same label, i.e. none.
     ImGui::Begin("Transforms");
-        ImGui::Text("Position");
-        ImGui::DragFloat3("", (float *)&offset, 0.01f, -1, 1);
-    ImGui::End();
+        ImGui::PushID(0);
+        ImGui::Text("Translation");
+        ImGui::SameLine();
+        ImGui::DragFloat3("", (float *)&translateOffset, 0.01f);
+        ImGui::PopID();
 
-    glClearColor(clearColor.x * clearColor.w, clearColor.y * clearColor.w, clearColor.z * clearColor.w, clearColor.w);
-    glClear(GL_COLOR_BUFFER_BIT);
+        ImGui::PushID(1);
+        ImGui::Text("Rotation   ");
+        ImGui::SameLine();
+        ImGui::DragFloat3("", (float *)&rotateOffset, 0.03f);
+        ImGui::PopID();
+
+        ImGui::PushID(2);
+        ImGui::Text("Scale      ");
+        ImGui::SameLine();
+        ImGui::DragFloat3("", (float *)&scaleOffset, 0.01f);
+        ImGui::PopID();
+    ImGui::End();
 }
 
 void UI::Render(GLFWwindow* window)
@@ -99,9 +136,24 @@ void UI::Render(GLFWwindow* window)
     }
 }
 
-ImVec4 UI::GetOffset() 
+ImVec4 UI::GetTranslationOffset() 
 {
-    return offset;
+    return translateOffset;
+}
+
+ImVec4 UI::GetRotationOffset() 
+{
+    return rotateOffset;
+}
+
+ImVec4 UI::GetScaleOffset() 
+{
+    return scaleOffset;
+}
+
+float UI::GetMixAmount()
+{
+    return mixAmount;
 }
 
 void UI::Shutdown() 

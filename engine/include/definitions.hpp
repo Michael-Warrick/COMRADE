@@ -24,14 +24,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-// // GLM (OpenGL Maths library so that we don't have to write our own!)
-// #include <glm/glm.hpp>
-// #include <glm/gtc/matrix_transform.hpp>
-// #include <glm/gtc/type_ptr.hpp>
-
-// // Third-party image loader
-// #define STB_IMAGE_IMPLEMENTATION
-// #include "../headers/thirdparty/stb_image.h"
+// GLM (OpenGL Maths library so that we don't have to write our own!)
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // using namespace glm;
 using namespace std;
