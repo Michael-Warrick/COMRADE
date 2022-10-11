@@ -1,8 +1,8 @@
-# Install script for directory: /Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/engine/external/glm
+# Install script for directory: C:/Dev/OpenGL/M_Engine/engine/external/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/M_Engine")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glm/glm/cmake_install.cmake")
+  include("C:/Dev/OpenGL/M_Engine/build/engine/external/glm/glm/cmake_install.cmake")
 
 endif()
 

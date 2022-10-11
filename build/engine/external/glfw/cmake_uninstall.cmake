@@ -1,22 +1,22 @@
 
-if (NOT EXISTS "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt\"")
+if (NOT EXISTS "C:/Dev/OpenGL/M_Engine/build/engine/external/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"C:/Dev/OpenGL/M_Engine/build/engine/external/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/Users/michaelwarrick/Documents/_Uni Work/_Year 3/CS3IP16/M_Engine/build/engine/external/glfw/install_manifest.txt" files)
+file(READ "C:/Dev/OpenGL/M_Engine/build/engine/external/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})
   message(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")
   if (EXISTS "$ENV{DESTDIR}${file}")
-    exec_program("/usr/local/Cellar/cmake/3.24.2/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+    exec_program("C:/Program Files/CMake/bin/cmake.exe" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
                  OUTPUT_VARIABLE rm_out
                  RETURN_VALUE rm_retval)
     if (NOT "${rm_retval}" STREQUAL 0)
       MESSAGE(FATAL_ERROR "Problem when removing \"$ENV{DESTDIR}${file}\"")
     endif()
   elseif (IS_SYMLINK "$ENV{DESTDIR}${file}")
-    EXEC_PROGRAM("/usr/local/Cellar/cmake/3.24.2/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+    EXEC_PROGRAM("C:/Program Files/CMake/bin/cmake.exe" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
                  OUTPUT_VARIABLE rm_out
                  RETURN_VALUE rm_retval)
     if (NOT "${rm_retval}" STREQUAL 0)
