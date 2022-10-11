@@ -1,5 +1,5 @@
 # M_Engine 
-![M_Engine current state](./engine/resources/img/ref-current/M_Engine 11-10-2022.png)
+![M_Engine current state](engine\resources\img\ref-current\M_Engine_11-10-2022.png)
 
 M_Engine is a cross-platform game engine written in C++ and OpenGL, with an emphasis on performance.
 
@@ -8,7 +8,7 @@ M_Engine is a cross-platform game engine written in C++ and OpenGL, with an emph
 2. [Setup](#setup)
 
 ## Introduction <a name="introduction"></a>
-The best way to introduce this engine is to explain its purpose. It is a demonstation of what can be achieved with Modern C++ and OpenGL, using little overhead to achieve peak performace and maximal compatibility. Of course the sudden thought of compromised performance due to looser integration with platform specifics may cross one's mind, however, with the ideas of opensource and inclusivity being predominant development factors, minimizing performance costs where they count and rigorously testing many configurations, ensures a high performaning application.
+The best way to introduce this engine is to explain its purpose. It is a demonstation of what can be achieved with Modern C++ and OpenGL, using little overhead to achieve peak performace and maximal compatibility. Of course the sudden thought of compromised performance due to looser integration with platform specifics may cross one's mind, however, with the ideas of opensource and inclusivity being predominant development factors, minimizing performance costs where they count and rigorously testing many configurations, ensures a high performing application.
 
 ## Setup <a name="setup"></a>
 ### Code Editor
