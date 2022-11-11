@@ -38,6 +38,9 @@ void UI::Update()
     MenuBar();
     RenderOptionsWindow();
     TransformComponentWindow();
+    LightSettingsWindow();
+    
+    // ImGui::ShowDemoWindow();
 
     glClearColor(clearColor.x * clearColor.w, clearColor.y * clearColor.w, clearColor.z * clearColor.w, clearColor.w);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -79,7 +82,6 @@ void UI::RenderOptionsWindow()
         else if (renderPoints) { glPointSize(5.0); glPolygonMode(GL_FRONT_AND_BACK, GL_POINT); }
         else { glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); }
 
-        ImGui::SliderFloat("Shader Mix", &mixAmount, 0.0f, 1.0f, "ratio = %.1f");
         ImGui::Separator();
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
         ImGui::Checkbox("Enable V-Sync", &vSyncEnabled);
@@ -92,7 +94,7 @@ void UI::RenderOptionsWindow()
 void UI::TransformComponentWindow() 
 {
     // Pushing of the ID allows for having a DragFloat3 of the same label, i.e. none.
-    ImGui::Begin("Transforms");
+    ImGui::Begin("Cube Properties");
         ImGui::PushID(0);
         ImGui::Text("Translation");
         ImGui::SameLine();
@@ -110,6 +112,86 @@ void UI::TransformComponentWindow()
         ImGui::SameLine();
         ImGui::DragFloat3("", (float *)&scaleOffset, 0.01f);
         ImGui::PopID();
+
+        ImGui::Separator();
+        
+        ImGui::Text("Texture Map Preview");
+
+        ImVec2 uvMin = ImVec2(0.0f, 1.0f);
+        ImVec2 uvMax = ImVec2(1.0f, 0.0f);
+        ImVec4 tintColor = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+        ImVec4 borderColor = ImVec4(0.247f, 0.247f, 0.282f, 1.0f);
+
+        ImVec2 pos = ImGui::GetCursorScreenPos();
+        ImGuiIO io = ImGui::GetIO();
+
+        ImGui::Image(diffusePreviewTexture, ImVec2(100, 100), uvMin, uvMax, tintColor, borderColor);
+        if (ImGui::IsItemHovered())
+        {
+            // Preview needs fixing as it is incorrect!
+            ImGui::BeginTooltip();
+                float region_sz = 32.0f;
+                float region_x = io.MousePos.x - pos.x - region_sz * 0.5f;
+                float region_y = io.MousePos.y - pos.y - region_sz * 0.5f;
+                float zoom = 4.0f;
+
+                if (region_x < 0.0f) { region_x = 0.0f; }
+                else if (region_x > 100.0f - region_sz) { region_x = 100.0f - region_sz; }
+                if (region_y < 0.0f) { region_y = 0.0f; }
+                else if (region_y > 100.0f - region_sz) { region_y = 100.0f - region_sz; }
+
+                ImGui::Text("Min: (%.2f, %.2f)", region_x, region_y);
+                ImGui::Text("Max: (%.2f, %.2f)", region_x + region_sz, region_y + region_sz);
+                ImVec2 uv0 = ImVec2((region_x) / 100.0f, (region_y + region_sz) / 100.0f);
+                ImVec2 uv1 = ImVec2((region_x + region_sz) / 100.0f, (region_y) / 100.0f);
+
+                ImGui::Image(diffusePreviewTexture, ImVec2(region_sz * zoom, region_sz * zoom), uv0, uv1, tintColor, borderColor);
+            ImGui::EndTooltip();
+        }
+        ImGui::SameLine();
+        ImGui::Text("Diffuse");
+
+        ImGui::Image(specularPreviewTexture, ImVec2(100, 100), uvMin, uvMax, tintColor, borderColor);
+        ImGui::SameLine();
+        ImGui::Text("Specular");
+
+        ImGui::Separator();
+
+        ImGui::SliderFloat("Shininess", &shininess, 32.0f, 256.0f, "%.1f");
+    ImGui::End();
+}
+
+void UI::LightSettingsWindow() 
+{
+    ImGui::Begin("Light Properties");
+        ImGui::Text("Directional Light Properties");
+        ImGui::DragFloat3("Rotation", (float*)&directionalLightRotation, 0.1f, -180.0f, 180.0f, "%.1f");
+        ImGui::DragFloat3("Ambient Intensity", (float*)&directionalLightAmbient, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Diffuse Intensity", (float*)&directionalLightDiffuse, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Specular Intensity", (float*)&directionalLightSpecular, 0.1f, 0.0f, 1.0f, "%.1f");
+
+        ImGui::Separator();
+
+        ImGui::Text("Point Light Properties");
+        ImGui::DragFloat3("Ambient Intensity", (float*)&pointLightAmbient, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Diffuse Intensity", (float*)&pointLightDiffuse, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Specular Intensity", (float*)&pointLightSpecular, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("Constant", &pointLightConstant, 0.0f, 1.0f, "%.01f");
+        ImGui::SliderFloat("Linear", &pointLightLinear, 0.0f, 1.0f, "%.01f");
+        ImGui::SliderFloat("Quadratic", &pointLightQuadratic, 0.0f, 1.0f, "%.01f");
+
+        ImGui::Separator();
+
+        ImGui::Text("Spot Light Properties");
+        ImGui::Checkbox("Enable Spot Light", &enableSpotLight);
+        ImGui::DragFloat3("Ambient Intensity", (float*)&spotLightAmbient, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Diffuse Intensity", (float*)&spotLightDiffuse, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::DragFloat3("Specular Intensity", (float*)&spotLightSpecular, 0.1f, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("Constant", &spotLightConstant, 0.0f, 1.0f, "%.01f");
+        ImGui::SliderFloat("Linear", &spotLightLinear, 0.0f, 1.0f, "%.01f");
+        ImGui::SliderFloat("Quadratic", &spotLightQuadratic, 0.0f, 1.0f, "%.01f");
+        ImGui::SliderFloat("CutOff Angle", &spotLightCutOff, 0.0f, 100.0f, "%.1f");
+        ImGui::SliderFloat("Outer CutOff Angle", &spotLightOuterCutOff, 0.0f, 100.0f, "%.1f");
     ImGui::End();
 }
 
@@ -136,25 +218,38 @@ void UI::Render(GLFWwindow* window)
     }
 }
 
-ImVec4 UI::GetTranslationOffset() 
-{
-    return translateOffset;
-}
+// GETTERS
+ImVec4 UI::GetTranslationOffset() { return translateOffset; }
+ImVec4 UI::GetRotationOffset() { return rotateOffset; }
+ImVec4 UI::GetScaleOffset() { return scaleOffset; }
 
-ImVec4 UI::GetRotationOffset() 
-{
-    return rotateOffset;
-}
+ImVec4 UI::GetDirectionalLightRotation() { return directionalLightRotation; }
+ImVec4 UI::GetDirectionalLightAmbient() { return directionalLightAmbient; }
+ImVec4 UI::GetDirectionalLightDiffuse() { return directionalLightDiffuse; }
+ImVec4 UI::GetDirectionalLightSpecular() { return directionalLightSpecular; }
 
-ImVec4 UI::GetScaleOffset() 
-{
-    return scaleOffset;
-}
+ImVec4 UI::GetPointLightAmbient() { return pointLightAmbient; }
+ImVec4 UI::GetPointLightDiffuse() { return pointLightDiffuse; }
+ImVec4 UI::GetPointLightSpecular() { return pointLightSpecular; }
+float UI::GetPointLightConstant() { return pointLightConstant; }
+float UI::GetPointLightLinear() { return pointLightLinear; }
+float UI::GetPointLightQuadratic() { return pointLightQuadratic; }
 
-float UI::GetMixAmount()
-{
-    return mixAmount;
-}
+bool UI::GetSpotLightBool() { return enableSpotLight; }
+ImVec4 UI::GetSpotLightAmbient() { return spotLightAmbient; }
+ImVec4 UI::GetSpotLightDiffuse() { return spotLightDiffuse; }
+ImVec4 UI::GetSpotLightSpecular() { return spotLightSpecular; }
+float UI::GetSpotLightConstant() { return spotLightConstant; }
+float UI::GetSpotLightLinear() { return spotLightLinear; }
+float UI::GetSpotLightQuadratic() { return spotLightQuadratic; }
+float UI::GetSpotLightCutOff() { return spotLightCutOff; }
+float UI::GetSpotLightOuterCutOff() { return spotLightOuterCutOff; }
+
+float UI::GetShininess() { return shininess; }
+
+// SETTERS
+void UI::SetDiffusePreviewTexture(unsigned int texture) { diffusePreviewTexture = (ImTextureID)(intptr_t)texture; }
+void UI::SetSpecularPreviewTexture(unsigned int texture) { specularPreviewTexture = (ImTextureID)(intptr_t)texture; }
 
 void UI::Shutdown() 
 {

@@ -419,6 +419,30 @@ engine/external/imgui-docking/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.s
 .PHONY : engine/external/imgui-docking/imgui_widgets.cpp.s
 
+engine/src/camera.obj: engine/src/camera.cpp.obj
+.PHONY : engine/src/camera.obj
+
+# target to build an object file
+engine/src/camera.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj
+.PHONY : engine/src/camera.cpp.obj
+
+engine/src/camera.i: engine/src/camera.cpp.i
+.PHONY : engine/src/camera.i
+
+# target to preprocess a source file
+engine/src/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/camera.cpp.i
+.PHONY : engine/src/camera.cpp.i
+
+engine/src/camera.s: engine/src/camera.cpp.s
+.PHONY : engine/src/camera.s
+
+# target to generate assembly for a file
+engine/src/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/camera.cpp.s
+.PHONY : engine/src/camera.cpp.s
+
 engine/src/main.obj: engine/src/main.cpp.obj
 .PHONY : engine/src/main.obj
 
@@ -466,6 +490,30 @@ engine/src/stb_image_impl.s: engine/src/stb_image_impl.cpp.s
 engine/src/stb_image_impl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.s
 .PHONY : engine/src/stb_image_impl.cpp.s
+
+engine/src/texture.obj: engine/src/texture.cpp.obj
+.PHONY : engine/src/texture.obj
+
+# target to build an object file
+engine/src/texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj
+.PHONY : engine/src/texture.cpp.obj
+
+engine/src/texture.i: engine/src/texture.cpp.i
+.PHONY : engine/src/texture.i
+
+# target to preprocess a source file
+engine/src/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/texture.cpp.i
+.PHONY : engine/src/texture.cpp.i
+
+engine/src/texture.s: engine/src/texture.cpp.s
+.PHONY : engine/src/texture.s
+
+# target to generate assembly for a file
+engine/src/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/texture.cpp.s
+.PHONY : engine/src/texture.cpp.s
 
 engine/src/ui.obj: engine/src/ui.cpp.obj
 .PHONY : engine/src/ui.obj
@@ -531,12 +579,18 @@ help:
 	@echo ... engine/external/imgui-docking/imgui_widgets.obj
 	@echo ... engine/external/imgui-docking/imgui_widgets.i
 	@echo ... engine/external/imgui-docking/imgui_widgets.s
+	@echo ... engine/src/camera.obj
+	@echo ... engine/src/camera.i
+	@echo ... engine/src/camera.s
 	@echo ... engine/src/main.obj
 	@echo ... engine/src/main.i
 	@echo ... engine/src/main.s
 	@echo ... engine/src/stb_image_impl.obj
 	@echo ... engine/src/stb_image_impl.i
 	@echo ... engine/src/stb_image_impl.s
+	@echo ... engine/src/texture.obj
+	@echo ... engine/src/texture.i
+	@echo ... engine/src/texture.s
 	@echo ... engine/src/ui.obj
 	@echo ... engine/src/ui.i
 	@echo ... engine/src/ui.s

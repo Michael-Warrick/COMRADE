@@ -98,11 +98,41 @@ CMakeFiles/M_Engine.dir/engine/src/ui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/M_Engine.dir/engine/src/ui.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\OpenGL\M_Engine\engine\src\ui.cpp -o CMakeFiles\M_Engine.dir\engine\src\ui.cpp.s
 
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj: CMakeFiles/M_Engine.dir/flags.make
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/src/camera.cpp
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\src\camera.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\src\camera.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\src\camera.cpp
+
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/M_Engine.dir/engine/src/camera.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\OpenGL\M_Engine\engine\src\camera.cpp > CMakeFiles\M_Engine.dir\engine\src\camera.cpp.i
+
+CMakeFiles/M_Engine.dir/engine/src/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/M_Engine.dir/engine/src/camera.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\OpenGL\M_Engine\engine\src\camera.cpp -o CMakeFiles\M_Engine.dir\engine\src\camera.cpp.s
+
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj: CMakeFiles/M_Engine.dir/flags.make
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/src/texture.cpp
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\src\texture.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\src\texture.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\src\texture.cpp
+
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/M_Engine.dir/engine/src/texture.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\OpenGL\M_Engine\engine\src\texture.cpp > CMakeFiles\M_Engine.dir\engine\src\texture.cpp.i
+
+CMakeFiles/M_Engine.dir/engine/src/texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/M_Engine.dir/engine/src/texture.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\OpenGL\M_Engine\engine\src\texture.cpp -o CMakeFiles\M_Engine.dir\engine\src\texture.cpp.s
+
 CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj: CMakeFiles/M_Engine.dir/flags.make
 CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/src/stb_image_impl.cpp
 CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\src\stb_image_impl.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\src\stb_image_impl.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\src\stb_image_impl.cpp
 
 CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.i: cmake_force
@@ -117,7 +147,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.c
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\backends\imgui_impl_glfw.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\backends\imgui_impl_glfw.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\backends\imgui_impl_glfw.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -132,7 +162,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\backends\imgui_impl_opengl3.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\backends\imgui_impl_opengl3.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\backends\imgui_impl_opengl3.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -147,7 +177,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj: CMakeFiles/
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\imgui.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui.cpp.i: cmake_force
@@ -162,7 +192,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj: CMakeF
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_draw.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_draw.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_draw.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\imgui_draw.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.i: cmake_force
@@ -177,7 +207,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj: CMakeF
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_demo.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_demo.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_demo.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\imgui_demo.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_demo.cpp.i: cmake_force
@@ -192,7 +222,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj: CMak
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_tables.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_tables.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_tables.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\imgui_tables.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.i: cmake_force
@@ -207,7 +237,7 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj: CMa
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj: CMakeFiles/M_Engine.dir/includes_CXX.rsp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj: C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_widgets.cpp
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj: CMakeFiles/M_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj -MF CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_widgets.cpp.obj.d -o CMakeFiles\M_Engine.dir\engine\external\imgui-docking\imgui_widgets.cpp.obj -c C:\Dev\OpenGL\M_Engine\engine\external\imgui-docking\imgui_widgets.cpp
 
 CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.i: cmake_force
@@ -222,6 +252,8 @@ CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.s: cmake
 M_Engine_OBJECTS = \
 "CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj" \
 "CMakeFiles/M_Engine.dir/engine/src/ui.cpp.obj" \
+"CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj" \
+"CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj" \
 "CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj" \
 "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj" \
 "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj" \
@@ -236,6 +268,8 @@ M_Engine_EXTERNAL_OBJECTS =
 
 M_Engine.exe: CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj
 M_Engine.exe: CMakeFiles/M_Engine.dir/engine/src/ui.cpp.obj
+M_Engine.exe: CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj
+M_Engine.exe: CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj
 M_Engine.exe: CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj
 M_Engine.exe: CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj
 M_Engine.exe: CMakeFiles/M_Engine.dir/engine/external/imgui-docking/backends/imgui_impl_opengl3.cpp.obj
@@ -250,7 +284,7 @@ M_Engine.exe: engine/external/glfw/src/libglfw3.a
 M_Engine.exe: CMakeFiles/M_Engine.dir/linklibs.rsp
 M_Engine.exe: CMakeFiles/M_Engine.dir/objects1.rsp
 M_Engine.exe: CMakeFiles/M_Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable M_Engine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable M_Engine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\M_Engine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

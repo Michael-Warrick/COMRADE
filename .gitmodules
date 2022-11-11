@@ -1,9 +1,0 @@
-[submodule "engine/external/glad"]
-	path = engine/external/glad
-	url = https://github.com/Dav1dde/glad.git
-[submodule "engine/external/glfw"]
-	path = engine/external/glfw
-	url = https://github.com/glfw/glfw
-[submodule "engine/external/glm"]
-	path = engine/external/glm
-	url = https://github.com/g-truc/glm.git

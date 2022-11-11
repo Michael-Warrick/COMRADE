@@ -15,8 +15,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_draw.cpp" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_draw.cpp.obj.d"
   "C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_tables.cpp" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_tables.cpp.obj.d"
   "C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/imgui_widgets.cpp" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/external/imgui-docking/imgui_widgets.cpp.obj.d"
+  "C:/Dev/OpenGL/M_Engine/engine/src/camera.cpp" "CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/src/camera.cpp.obj.d"
   "C:/Dev/OpenGL/M_Engine/engine/src/main.cpp" "CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj.d"
   "C:/Dev/OpenGL/M_Engine/engine/src/stb_image_impl.cpp" "CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/src/stb_image_impl.cpp.obj.d"
+  "C:/Dev/OpenGL/M_Engine/engine/src/texture.cpp" "CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/src/texture.cpp.obj.d"
   "C:/Dev/OpenGL/M_Engine/engine/src/ui.cpp" "CMakeFiles/M_Engine.dir/engine/src/ui.cpp.obj" "gcc" "CMakeFiles/M_Engine.dir/engine/src/ui.cpp.obj.d"
   )
 

@@ -18,6 +18,8 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/definitions.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/ui.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/shader.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/camera.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/texture.hpp
 
     # STB_IMAGE HEADER
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/stb_image.h
@@ -25,6 +27,8 @@ add_executable(${PROJECT_NAME}
     # SOURCE FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/ui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/camera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/texture.cpp
 
     # STB_IMAGE IMPLEMENTATION
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/stb_image_impl.cpp

@@ -158,6 +158,7 @@ CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/assert.h \
  C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/backends/imgui_impl_glfw.h \
  C:/Dev/OpenGL/M_Engine/engine/external/imgui-docking/backends/imgui_impl_opengl3.h \
+ C:/Dev/OpenGL/M_Engine/engine/include/stb_image.h \
  C:/Dev/OpenGL/M_Engine/build/engine/external/glad/include/glad/glad.h \
  C:/Dev/OpenGL/M_Engine/build/engine/external/glad/include/KHR/khrplatform.h \
  C:/Dev/OpenGL/M_Engine/engine/external/glfw/include/GLFW/glfw3.h \
@@ -390,4 +391,5 @@ CMakeFiles/M_Engine.dir/engine/src/main.cpp.obj: \
  C:/Dev/OpenGL/M_Engine/engine/include/ui.hpp \
  C:/Dev/OpenGL/M_Engine/engine/include/definitions.hpp \
  C:/Dev/OpenGL/M_Engine/engine/include/shader.hpp \
- C:/Dev/OpenGL/M_Engine/engine/include/stb_image.h
+ C:/Dev/OpenGL/M_Engine/engine/include/camera.hpp \
+ C:/Dev/OpenGL/M_Engine/engine/include/texture.hpp

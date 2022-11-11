@@ -11,6 +11,16 @@
 },
 {
   "directory": "C:/Dev/OpenGL/M_Engine/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/M_Engine.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles\\M_Engine.dir\\engine\\src\\camera.cpp.obj -c C:\\Dev\\OpenGL\\M_Engine\\engine\\src\\camera.cpp",
+  "file": "C:/Dev/OpenGL/M_Engine/engine/src/camera.cpp"
+},
+{
+  "directory": "C:/Dev/OpenGL/M_Engine/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/M_Engine.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles\\M_Engine.dir\\engine\\src\\texture.cpp.obj -c C:\\Dev\\OpenGL\\M_Engine\\engine\\src\\texture.cpp",
+  "file": "C:/Dev/OpenGL/M_Engine/engine/src/texture.cpp"
+},
+{
+  "directory": "C:/Dev/OpenGL/M_Engine/build",
   "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/M_Engine.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles\\M_Engine.dir\\engine\\src\\stb_image_impl.cpp.obj -c C:\\Dev\\OpenGL\\M_Engine\\engine\\src\\stb_image_impl.cpp",
   "file": "C:/Dev/OpenGL/M_Engine/engine/src/stb_image_impl.cpp"
 },
