@@ -11,16 +11,42 @@ UI::UI(GLFWwindow* window, const char* glVersion)
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
 
-    // Setup Dear ImGui style
+    ImFont *mainfont = io.Fonts->AddFontFromFileTTF("engine/resources/fonts/Noto_Sans/NotoSans-Regular.ttf", 30.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
+    ImFontConfig fontConfig;
+    float globalScaleFactor = 5.0f;
+
+    fontConfig.SizePixels = 36 * globalScaleFactor;
+    io.Fonts->AddFontDefault(&fontConfig)->FontSize = globalScaleFactor;
+
     ImGui::StyleColorsDark();
-    //ImGui::StyleColorsLight();
 
     // When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
     {
-        style.WindowRounding = 15.0f;
-        style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+        style.WindowBorderSize = 0;
+	    style.WindowTitleAlign = ImVec2(0.5, 0.5);
+        style.FramePadding = ImVec2(8, 4);
+
+        style.Colors[ImGuiCol_TitleBg] = ImColor(55, 159 ,239, 255);
+	    style.Colors[ImGuiCol_TitleBgActive] = ImColor(55, 159, 239, 255);
+	    style.Colors[ImGuiCol_TitleBgCollapsed] = ImColor(0, 0, 0, 130);
+
+	    style.Colors[ImGuiCol_Button] = ImColor(31, 30, 31, 255);
+	    style.Colors[ImGuiCol_ButtonActive] = ImColor(31, 30, 31, 255);
+	    style.Colors[ImGuiCol_ButtonHovered] = ImColor(41, 40, 41, 255);
+
+	    style.Colors[ImGuiCol_Separator] = ImColor(70, 70, 70, 255);
+	    style.Colors[ImGuiCol_SeparatorActive] = ImColor(76, 76, 76, 255);
+	    style.Colors[ImGuiCol_SeparatorHovered] = ImColor(76, 76, 76, 255);
+
+        style.Colors[ImGuiCol_FrameBg] = ImColor(37, 36, 37, 255);
+	    style.Colors[ImGuiCol_FrameBgActive] = ImColor(37, 36, 37, 255);
+	    style.Colors[ImGuiCol_FrameBgHovered] = ImColor(37, 36, 37, 255);
+
+	    style.Colors[ImGuiCol_Header] = ImColor(0, 0, 0, 0);
+	    style.Colors[ImGuiCol_HeaderActive] = ImColor(0, 0, 0, 0);
+	    style.Colors[ImGuiCol_HeaderHovered] = ImColor(46, 46, 46, 255);
     }
 
     // Setup Platform/Renderer backends
@@ -39,8 +65,6 @@ void UI::Update()
     RenderOptionsWindow();
     TransformComponentWindow();
     LightSettingsWindow();
-    
-    // ImGui::ShowDemoWindow();
 
     glClearColor(clearColor.x * clearColor.w, clearColor.y * clearColor.w, clearColor.z * clearColor.w, clearColor.w);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -88,30 +112,23 @@ void UI::RenderOptionsWindow()
 
         if (vSyncEnabled) { glfwSwapInterval(1); }
         else { glfwSwapInterval(0); }
+
+        ImGui::Separator();
+        ImGui::Text("Text Options");
+        // ImGui::SliderFloat("UI Scale", &globalScaleFactor, 0.1f, 2.0f, "%.1f");
+
+        // ImGuiIO io = ImGui::GetIO();
+        // fontConfig.SizePixels = 12 * globalScaleFactor;
+        // io.Fonts->AddFontDefault(&fontConfig)->FontSize = globalScaleFactor;
     ImGui::End();
 }
 
 void UI::TransformComponentWindow() 
 {
-    // Pushing of the ID allows for having a DragFloat3 of the same label, i.e. none.
-    ImGui::Begin("Cube Properties");
-        ImGui::PushID(0);
-        ImGui::Text("Translation");
-        ImGui::SameLine();
-        ImGui::DragFloat3("", (float *)&translateOffset, 0.01f);
-        ImGui::PopID();
-
-        ImGui::PushID(1);
-        ImGui::Text("Rotation   ");
-        ImGui::SameLine();
-        ImGui::DragFloat3("", (float *)&rotateOffset, 0.03f);
-        ImGui::PopID();
-
-        ImGui::PushID(2);
-        ImGui::Text("Scale      ");
-        ImGui::SameLine();
-        ImGui::DragFloat3("", (float *)&scaleOffset, 0.01f);
-        ImGui::PopID();
+    ImGui::Begin("Portal Gun Transform");
+        ImGui::DragFloat3(labelPrefix("Translation").c_str(), (float *)&translateOffset, 0.01f);
+        ImGui::DragFloat3(labelPrefix("Rotation").c_str(), (float *)&rotateOffset, 0.03f);
+        ImGui::DragFloat3(labelPrefix("Scale").c_str(), (float *)&scaleOffset, 0.01f);
 
         ImGui::Separator();
         
@@ -154,10 +171,12 @@ void UI::TransformComponentWindow()
         ImGui::Image(specularPreviewTexture, ImVec2(100, 100), uvMin, uvMax, tintColor, borderColor);
         ImGui::SameLine();
         ImGui::Text("Specular");
+    ImGui::End();
 
-        ImGui::Separator();
-
-        ImGui::SliderFloat("Shininess", &shininess, 32.0f, 256.0f, "%.1f");
+    ImGui::Begin("Companion Cube Transform");
+        ImGui::DragFloat3(labelPrefix("Translation").c_str(), (float *)&cubePositionOffset, 0.01f);
+        ImGui::DragFloat3(labelPrefix("Rotation").c_str(), (float *)&cubeRotationOffset, 0.03f);
+        ImGui::DragFloat3(labelPrefix("Scale").c_str(), (float *)&cubeScaleOffset, 0.01f);
     ImGui::End();
 }
 
@@ -198,11 +217,6 @@ void UI::LightSettingsWindow()
 void UI::Render(GLFWwindow* window)
 {
     ImGui::Render();
-
-    int display_w, display_h;
-    glfwGetFramebufferSize(window, &display_w, &display_h);
-    glViewport(0, 0, display_w, display_h);
-    
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
     ImGuiIO& io = ImGui::GetIO();
@@ -222,6 +236,10 @@ void UI::Render(GLFWwindow* window)
 ImVec4 UI::GetTranslationOffset() { return translateOffset; }
 ImVec4 UI::GetRotationOffset() { return rotateOffset; }
 ImVec4 UI::GetScaleOffset() { return scaleOffset; }
+
+ImVec4 UI::GetCubePositionOffset() { return cubePositionOffset; }
+ImVec4 UI::GetCubeRotationOffset() { return cubeRotationOffset; }
+ImVec4 UI::GetCubeScaleOffset() { return cubeScaleOffset; }
 
 ImVec4 UI::GetDirectionalLightRotation() { return directionalLightRotation; }
 ImVec4 UI::GetDirectionalLightAmbient() { return directionalLightAmbient; }
@@ -245,11 +263,26 @@ float UI::GetSpotLightQuadratic() { return spotLightQuadratic; }
 float UI::GetSpotLightCutOff() { return spotLightCutOff; }
 float UI::GetSpotLightOuterCutOff() { return spotLightOuterCutOff; }
 
-float UI::GetShininess() { return shininess; }
-
 // SETTERS
 void UI::SetDiffusePreviewTexture(unsigned int texture) { diffusePreviewTexture = (ImTextureID)(intptr_t)texture; }
 void UI::SetSpecularPreviewTexture(unsigned int texture) { specularPreviewTexture = (ImTextureID)(intptr_t)texture; }
+
+// PRIVATE METHODS
+std::string UI::labelPrefix(const char* const label) 
+{
+    float width = ImGui::CalcItemWidth();
+
+	float x = ImGui::GetCursorPosX();
+	ImGui::Text(label); 
+	ImGui::SameLine(); 
+	ImGui::SetCursorPosX(x + width * 0.5f + ImGui::GetStyle().ItemInnerSpacing.x);
+	ImGui::SetNextItemWidth(-1);
+
+	std::string labelID = "##";
+	labelID += label;
+
+	return labelID;
+}
 
 void UI::Shutdown() 
 {

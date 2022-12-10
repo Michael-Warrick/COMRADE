@@ -1,9 +1,17 @@
-#include "definitions.hpp"
+#include <iostream>
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+#include "../external/imgui-docking/imgui.h"
+#include "../external/imgui-docking/backends/imgui_impl_glfw.h"
+#include "../external/imgui-docking/backends/imgui_impl_opengl3.h"
 
 class UI
 {
 private:
     void InitDPIScale(float scale, ImFont*& smallFont, ImFont*& fixedWidthFont, ImFont*& largeFont);
+    std::string labelPrefix(const char* const label);
 
     ImVec4 clearColor = ImVec4(0.09f, 0.09f, 0.09f, 1.00f);
 
@@ -14,15 +22,17 @@ private:
 
     float dpiScale = 1.0f;
 
-    // Cube settings
-    ImVec4 scaleOffset = ImVec4(1.0f, 1.0f, 1.0f, 0.0f);
-    ImVec4 rotateOffset = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-    ImVec4 translateOffset = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+    // Model Transforms
+    ImVec4 scaleOffset = ImVec4(0.25f, 0.25f, 0.25f, 0.0f);
+    ImVec4 rotateOffset = ImVec4(0.0f, 180.0f, 0.0f, 0.0f);
+    ImVec4 translateOffset = ImVec4(0.47f, -0.24f, -0.51f, 0.0f);
+
+    ImVec4 cubePositionOffset = ImVec4(0.0f, 1.0f, 0.0f, 0.0f);
+    ImVec4 cubeRotationOffset = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+    ImVec4 cubeScaleOffset = ImVec4(1.0f, 1.0f, 1.0f, 0.0f);
 
     ImTextureID diffusePreviewTexture = 0;
     ImTextureID specularPreviewTexture = 0;
-
-    float shininess = 32.0f;
     
     // LIGHT SETTINGS
     // Directional
@@ -64,6 +74,10 @@ public:
     ImVec4 GetTranslationOffset();
     ImVec4 GetRotationOffset();
     ImVec4 GetScaleOffset();
+
+    ImVec4 GetCubePositionOffset();
+    ImVec4 GetCubeRotationOffset();
+    ImVec4 GetCubeScaleOffset();
 
     ImVec4 GetDirectionalLightRotation();
     ImVec4 GetDirectionalLightAmbient();

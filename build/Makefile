@@ -86,7 +86,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"assimp-dev\" \"libassimp5.2.5-dev\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -250,6 +250,45 @@ update_mappings: cmake_check_build_system
 update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f engine\external\glfw\src\CMakeFiles\update_mappings.dir\build.make engine/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
+
+#=============================================================================
+# Target rules for targets named zlibstatic
+
+# Build rule for target.
+zlibstatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 zlibstatic
+.PHONY : zlibstatic
+
+# fast build rule for target.
+zlibstatic/fast:
+	$(MAKE) $(MAKESILENT) -f engine\external\assimp\contrib\zlib\CMakeFiles\zlibstatic.dir\build.make engine/external/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/build
+.PHONY : zlibstatic/fast
+
+#=============================================================================
+# Target rules for targets named assimp
+
+# Build rule for target.
+assimp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 assimp
+.PHONY : assimp
+
+# fast build rule for target.
+assimp/fast:
+	$(MAKE) $(MAKESILENT) -f engine\external\assimp\code\CMakeFiles\assimp.dir\build.make engine/external/assimp/code/CMakeFiles/assimp.dir/build
+.PHONY : assimp/fast
+
+#=============================================================================
+# Target rules for targets named unit
+
+# Build rule for target.
+unit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 unit
+.PHONY : unit
+
+# fast build rule for target.
+unit/fast:
+	$(MAKE) $(MAKESILENT) -f engine\external\assimp\test\CMakeFiles\unit.dir\build.make engine/external/assimp/test/CMakeFiles/unit.dir/build
+.PHONY : unit/fast
 
 engine/external/imgui-docking/backends/imgui_impl_glfw.obj: engine/external/imgui-docking/backends/imgui_impl_glfw.cpp.obj
 .PHONY : engine/external/imgui-docking/backends/imgui_impl_glfw.obj
@@ -467,6 +506,54 @@ engine/src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/main.cpp.s
 .PHONY : engine/src/main.cpp.s
 
+engine/src/mesh.obj: engine/src/mesh.cpp.obj
+.PHONY : engine/src/mesh.obj
+
+# target to build an object file
+engine/src/mesh.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/mesh.cpp.obj
+.PHONY : engine/src/mesh.cpp.obj
+
+engine/src/mesh.i: engine/src/mesh.cpp.i
+.PHONY : engine/src/mesh.i
+
+# target to preprocess a source file
+engine/src/mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/mesh.cpp.i
+.PHONY : engine/src/mesh.cpp.i
+
+engine/src/mesh.s: engine/src/mesh.cpp.s
+.PHONY : engine/src/mesh.s
+
+# target to generate assembly for a file
+engine/src/mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/mesh.cpp.s
+.PHONY : engine/src/mesh.cpp.s
+
+engine/src/model.obj: engine/src/model.cpp.obj
+.PHONY : engine/src/model.obj
+
+# target to build an object file
+engine/src/model.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/model.cpp.obj
+.PHONY : engine/src/model.cpp.obj
+
+engine/src/model.i: engine/src/model.cpp.i
+.PHONY : engine/src/model.i
+
+# target to preprocess a source file
+engine/src/model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/model.cpp.i
+.PHONY : engine/src/model.cpp.i
+
+engine/src/model.s: engine/src/model.cpp.s
+.PHONY : engine/src/model.s
+
+# target to generate assembly for a file
+engine/src/model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/engine/src/model.cpp.s
+.PHONY : engine/src/model.cpp.s
+
 engine/src/stb_image_impl.obj: engine/src/stb_image_impl.cpp.obj
 .PHONY : engine/src/stb_image_impl.obj
 
@@ -556,8 +643,11 @@ help:
 	@echo ... uninstall
 	@echo ... update_mappings
 	@echo ... M_Engine
+	@echo ... assimp
 	@echo ... glad
 	@echo ... glfw
+	@echo ... unit
+	@echo ... zlibstatic
 	@echo ... engine/external/imgui-docking/backends/imgui_impl_glfw.obj
 	@echo ... engine/external/imgui-docking/backends/imgui_impl_glfw.i
 	@echo ... engine/external/imgui-docking/backends/imgui_impl_glfw.s
@@ -585,6 +675,12 @@ help:
 	@echo ... engine/src/main.obj
 	@echo ... engine/src/main.i
 	@echo ... engine/src/main.s
+	@echo ... engine/src/mesh.obj
+	@echo ... engine/src/mesh.i
+	@echo ... engine/src/mesh.s
+	@echo ... engine/src/model.obj
+	@echo ... engine/src/model.i
+	@echo ... engine/src/model.s
 	@echo ... engine/src/stb_image_impl.obj
 	@echo ... engine/src/stb_image_impl.i
 	@echo ... engine/src/stb_image_impl.s

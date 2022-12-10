@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(engine/external/glad)
 add_subdirectory(engine/external/glfw)
 add_subdirectory(engine/external/glm)
+add_subdirectory(engine/external/assimp)
 
 set(IMGUI_DIR engine/external/imgui-docking)
 include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
@@ -20,6 +21,8 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/shader.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/camera.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/texture.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/mesh.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/model.hpp
 
     # STB_IMAGE HEADER
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/stb_image.h
@@ -29,6 +32,8 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/ui.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/camera.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/texture.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/mesh.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/model.cpp
 
     # STB_IMAGE IMPLEMENTATION
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/stb_image_impl.cpp
@@ -60,6 +65,7 @@ target_include_directories(${PROJECT_NAME}
         glad
         glfw
         glm
+        assimp
 )
 
 # As of right now, static linking is only available on Windows
@@ -70,6 +76,7 @@ if(WIN32)
         glad
         glfw
         glm
+        assimp
     )
 
     # Telling the compiler to not launch a console window when app is built
@@ -80,5 +87,6 @@ else()
         glad
         glfw
         glm
+        assimp
     )
 endif()

@@ -42,6 +42,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Dev/OpenGL/M_Engine/build/engine/external/glad/cmake_install.cmake")
   include("C:/Dev/OpenGL/M_Engine/build/engine/external/glfw/cmake_install.cmake")
   include("C:/Dev/OpenGL/M_Engine/build/engine/external/glm/cmake_install.cmake")
+  include("C:/Dev/OpenGL/M_Engine/build/engine/external/assimp/cmake_install.cmake")
 
 endif()
 

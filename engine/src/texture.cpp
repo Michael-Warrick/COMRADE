@@ -35,7 +35,7 @@ unsigned int Texture::Load(char const* path)
     
     else
     {
-        std::cout << "ERROR::Failed to load:" << path << " texture" << endl;
+        std::cout << "ERROR::Failed to load:" << path << " texture" << std::endl;
         stbi_image_free(data); 
     }
     

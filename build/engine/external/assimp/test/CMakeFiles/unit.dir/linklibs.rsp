@@ -1,0 +1,1 @@
+  -LC:/Dev/OpenGL/M_Engine/build/engine/external/assimp  -L/lib  ../lib/libassimp.a ../contrib/zlib/libzlibstatic.a -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lwinpthread -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

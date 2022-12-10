@@ -1,4 +1,12 @@
-#include "definitions.hpp"
+#pragma once
+
+#include <glad/glad.h>
+#include <glm/glm.hpp>
+
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 class Shader
 {
@@ -7,22 +15,22 @@ public:
 
     Shader(const char* vertexPath, const char* fragmentPath)
     {
-        string vertexCode;
-        string fragmentCode;
+        std::string vertexCode;
+        std::string fragmentCode;
 
-        ifstream vertexShaderFile;
-        ifstream fragmentShaderFile;
+        std::ifstream vertexShaderFile;
+        std::ifstream fragmentShaderFile;
 
-        vertexShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
-        fragmentShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
+        vertexShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+        fragmentShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
         try
         {
             vertexShaderFile.open(vertexPath);
             fragmentShaderFile.open(fragmentPath);
 
-            stringstream vertexShaderStream;
-            stringstream fragmentShaderStream;
+            std::stringstream vertexShaderStream;
+            std::stringstream fragmentShaderStream;
 
             vertexShaderStream << vertexShaderFile.rdbuf();
             fragmentShaderStream << fragmentShaderFile.rdbuf();
@@ -33,9 +41,9 @@ public:
             vertexCode = vertexShaderStream.str();
             fragmentCode = fragmentShaderStream.str();
         }
-        catch(ifstream::failure& e)
+        catch(std::ifstream::failure& e)
         {
-            cerr << "ERROR::SHADER::UNSUCCESSFUL FILE READ: " << e.what() << endl;
+            std::cerr << "ERROR::SHADER::UNSUCCESSFUL FILE READ: " << e.what() << std::endl;
         }
 
         const char* vertexShaderCode = vertexCode.c_str();
@@ -54,7 +62,7 @@ public:
         if (!success)
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-            cerr << "ERROR::SHADER::VERTEX::FAILED TO COMPILE" << endl;
+            std::cerr << "ERROR::SHADER::VERTEX::FAILED TO COMPILE" << std::endl;
         }
 
         fragment = glCreateShader(GL_FRAGMENT_SHADER);
@@ -65,7 +73,7 @@ public:
         if (!success)
         {
             glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-            cerr << "ERROR::SHADER::FRAGMENT::FAILED TO COMPILE" << endl;
+            std::cerr << "ERROR::SHADER::FRAGMENT::FAILED TO COMPILE" << std::endl;
         }
 
         ID = glCreateProgram();
@@ -77,7 +85,7 @@ public:
         glGetProgramiv(ID, GL_LINK_STATUS, &success);
         if (!success)
         {
-            cerr << "ERROR::SHADER::PROGRAM::FAILED TO LINK\n" << infoLog << endl;
+            std::cerr << "ERROR::SHADER::PROGRAM::FAILED TO LINK\n" << infoLog << std::endl;
         }
 
         glDeleteShader(vertex);
@@ -90,17 +98,17 @@ public:
         glUseProgram(ID);
     }
 
-    void SetBool(const string &name, bool value) const
+    void SetBool(const std::string &name, bool value) const
     {         
         glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value); 
     }
 
-    void SetInt(const string &name, int value) const
+    void SetInt(const std::string &name, int value) const
     { 
         glUniform1i(glGetUniformLocation(ID, name.c_str()), value); 
     }
 
-    void SetFloat(const string &name, float value) const
+    void SetFloat(const std::string &name, float value) const
     { 
         glUniform1f(glGetUniformLocation(ID, name.c_str()), value); 
     }
@@ -145,7 +153,7 @@ public:
         glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
 
-    void SetMat4(const string &name, const glm::mat4 &mat) const 
+    void SetMat4(const std::string &name, const glm::mat4 &mat) const 
     {
         glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }

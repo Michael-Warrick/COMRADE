@@ -1,0 +1,297 @@
+# Blender MTL File: 'None'
+# Material Count: 25
+
+newmtl BeachballMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\BeachBallGeo_initialShadingGroup_BaseColor.png
+
+newmtl BluePlasticMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\BlueBucket_BaseColor.png
+
+newmtl BlueSurfboard_Material
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\BlueSurfboard_BaseColor.png
+
+newmtl BlueTowel
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ColourfulTowel_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\BlueTowel_BaseColor.png
+
+newmtl ColourfulTowel_BaseColor_Mat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ColourfulTowel_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ColourfulTowel_BaseColor.png
+
+newmtl FloaterMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\FloaterGeo_initialShadingGroup_BaseColor.png
+
+newmtl GreenTowel
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ColourfulTowel_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\GreenTowel_BaseColor.png
+
+newmtl GuardChairMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ChairLPUV_LifeGuardChairLowpoly_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ChairLPUV_LifeGuardChairLowpoly_initialShadingGroup_BaseColor.png
+
+newmtl LeafMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\LeavesTexture.png
+map_d C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\LeavesTexture.png
+
+newmtl OrangeTowel
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ColourfulTowel_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\OrangeTowel_BaseColor.png
+
+newmtl RedPlasticMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\RedBucket_BaseColor.png
+
+newmtl RedSurfboard_Material
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\RedSurfBoard_BaseColor.png
+
+newmtl Rock01NoGrassMat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock01WOGrass_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock01WOGrass_BaseColor.png
+
+newmtl Rock01WithGrassMat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock01Geo_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock01Geo_initialShadingGroup_BaseColor.png
+
+newmtl Rock02NoGrassMat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock02WOGrass_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock02WOGrass_BaseColor.png
+
+newmtl Rock02WithGrassMat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock02Geo_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Rock02Geo_initialShadingGroup_BaseColor.png
+
+newmtl SandCastleMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\SandcastleGeo_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\SandcastleGeo_initialShadingGroup_BaseColor.png
+
+newmtl ShellMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ShellGeo_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\ShellGeo_initialShadingGroup_BaseColor.png
+
+newmtl StarfishMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\StarfishGeo_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\StarfishGeo_initialShadingGroup_BaseColor.png
+
+newmtl TreeMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Tree_Lowpoly_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Tree_Lowpoly_initialShadingGroup_BaseColor.png
+
+newmtl UmbrellaMaterial
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\UmbrellaLPUV_UmbrellaLowpoly_initialShadingGroup_Normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\UmbrellaLPUV_UmbrellaLowpoly_initialShadingGroup_BaseColor.png
+
+newmtl WhiteSurfBoard_Material
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\WhiteSurfBoard_BaseColor.png
+
+newmtl Wood_basecolor_Mat
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Wood_normal.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Wood_basecolor.png
+map_d C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\Wood_basecolor.png
+
+newmtl blinn1
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\GrassFoilageTexture.png
+map_d C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\GrassFoilageTexture.png
+
+newmtl blinn4
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\IslandPlateNormalMap.png
+map_Kd C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\IslandPlateTexturing.png
+map_d C:\\Users\\mitch\\Downloads\\folder-1-beach-island\\source\\Folder_1_Final\\EnvironmentMesh\\IslandPlateTexturing.png
