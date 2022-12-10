@@ -251,11 +251,11 @@ engine/external/glm/glm/clean:
 # Target rules for target CMakeFiles/M_Engine.dir
 
 # All Build rule for target.
-CMakeFiles/M_Engine.dir/all: engine/external/glad/CMakeFiles/glad.dir/all
 CMakeFiles/M_Engine.dir/all: CMakeFiles/copy_resources.dir/all
+CMakeFiles/M_Engine.dir/all: engine/external/glad/CMakeFiles/glad.dir/all
 CMakeFiles/M_Engine.dir/all: engine/external/glfw/src/CMakeFiles/glfw.dir/all
-CMakeFiles/M_Engine.dir/all: engine/external/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/all
 CMakeFiles/M_Engine.dir/all: engine/external/assimp/code/CMakeFiles/assimp.dir/all
+CMakeFiles/M_Engine.dir/all: engine/external/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\M_Engine.dir\build.make CMakeFiles/M_Engine.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=1,2,3 "Built target M_Engine"
@@ -489,8 +489,8 @@ engine/external/assimp/code/CMakeFiles/assimp.dir/clean:
 # Target rules for target engine/external/assimp/test/CMakeFiles/unit.dir
 
 # All Build rule for target.
-engine/external/assimp/test/CMakeFiles/unit.dir/all: engine/external/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/all
 engine/external/assimp/test/CMakeFiles/unit.dir/all: engine/external/assimp/code/CMakeFiles/assimp.dir/all
+engine/external/assimp/test/CMakeFiles/unit.dir/all: engine/external/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/all
 	$(MAKE) $(MAKESILENT) -f engine\external\assimp\test\CMakeFiles\unit.dir\build.make engine/external/assimp/test/CMakeFiles/unit.dir/depend
 	$(MAKE) $(MAKESILENT) -f engine\external\assimp\test\CMakeFiles\unit.dir\build.make engine/external/assimp/test/CMakeFiles/unit.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Dev\OpenGL\M_Engine\build\CMakeFiles --progress-num=67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95 "Built target unit"

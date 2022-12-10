@@ -1,5 +1,5 @@
 # M_Engine 
-![M_Engine current state](engine\resources\img\ref-current\M_Engine_11-10-2022.png)
+![M_Engine current state](engine/resources/img/ref-current/M_Engine.png)
 
 M_Engine is a cross-platform game engine written in C++ and OpenGL, with an emphasis on performance.
 
