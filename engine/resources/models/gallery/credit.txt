@@ -1,0 +1,4 @@
+Title: VR Gallery
+Creator: Maxim Mavrichev (https://sketchfab.com/mvrc.art)
+Source: https://sketchfab.com/3d-models/vr-gallery-1e087aa25dc742e680accb15249bd6be
+Licence: CC BY-ND 4.0 (https://creativecommons.org/licenses/by/4.0/)

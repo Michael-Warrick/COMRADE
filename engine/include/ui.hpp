@@ -17,27 +17,25 @@ private:
 
     bool renderWireframe = false;
     bool renderPoints = false;
-    bool hello = false;
+    bool renderDepthBuffer = false;
     bool vSyncEnabled = true;
 
     float dpiScale = 1.0f;
+    float globalFontSize = 1.0f;
 
     // Model Transforms
     ImVec4 scaleOffset = ImVec4(0.25f, 0.25f, 0.25f, 0.0f);
     ImVec4 rotateOffset = ImVec4(0.0f, 180.0f, 0.0f, 0.0f);
     ImVec4 translateOffset = ImVec4(0.47f, -0.24f, -0.51f, 0.0f);
 
-    ImVec4 cubePositionOffset = ImVec4(0.0f, 1.0f, 0.0f, 0.0f);
+    ImVec4 cubePositionOffset = ImVec4(0.0f, 2.0f, 0.0f, 0.0f);
     ImVec4 cubeRotationOffset = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
     ImVec4 cubeScaleOffset = ImVec4(1.0f, 1.0f, 1.0f, 0.0f);
 
-    ImTextureID diffusePreviewTexture = 0;
-    ImTextureID specularPreviewTexture = 0;
-    
     // LIGHT SETTINGS
     // Directional
     ImVec4 directionalLightRotation = ImVec4(-0.2f, -1.0f, -0.3f, 0.0f);
-    ImVec4 directionalLightAmbient = ImVec4(0.05f, 0.05f, 0.05f, 0.0f);
+    ImVec4 directionalLightAmbient = ImVec4(0.15f, 0.15f, 0.15f, 0.0f);
     ImVec4 directionalLightDiffuse = ImVec4(0.4f, 0.4f, 0.4f, 0.0f);
     ImVec4 directionalLightSpecular = ImVec4( 0.5f, 0.5f, 0.5f, 0.0f);
 
@@ -62,7 +60,7 @@ private:
 
 public:
     UI(GLFWwindow* window, const char* glVersion);
-    void Update();
+    void Update(GLFWwindow* window);
     void Render(GLFWwindow* window);
 
     void MenuBar();
@@ -71,6 +69,8 @@ public:
     void LightSettingsWindow();
 
     // GETTERS    
+    bool GetDepthBufferBool();
+
     ImVec4 GetTranslationOffset();
     ImVec4 GetRotationOffset();
     ImVec4 GetScaleOffset();

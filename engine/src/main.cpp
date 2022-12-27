@@ -17,7 +17,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 void processInput(GLFWwindow *window);
 
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 2.5f, 0.1, 75.0f);
+Camera camera(glm::vec3(0.0f, 1.5f, 3.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 2.5f, 0.1, 75.0f);
 float lastX = SCREEN_WIDTH / 2;
 float lastY = SCREEN_HEIGHT / 2;
 
@@ -37,12 +37,13 @@ int main()
 
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    int resolutionX = glfwGetVideoMode(glfwGetPrimaryMonitor())->width;
-    int resolutionY = glfwGetVideoMode(glfwGetPrimaryMonitor())->height;
+    // Make the initial window 75% of the user's screen
+    int initialWindowSizeX = glfwGetVideoMode(glfwGetPrimaryMonitor())->width * 0.75;
+    int initialWindowSizeY = glfwGetVideoMode(glfwGetPrimaryMonitor())->height * 0.75;
 
     static const char* title = "M_Engine Dev-Build - " PLATFORM_NAME;
 
-    GLFWwindow* window = glfwCreateWindow(resolutionX * 0.75, resolutionY * 0.75, title, NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(initialWindowSizeX, initialWindowSizeY, title, NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -63,18 +64,31 @@ int main()
         return -1;
     }
 
+    // GLOBAL DEPTH SETTINGS
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_BLEND);
+    glDepthFunc(GL_LESS);
 
+    // GLOBAL STENCIL SETTINGS
+    glEnable(GL_STENCIL_TEST);
+    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+
+    // GLOBAL BLEND SETTINGS
+    glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     UI ui(window, "#version 410");
 
-    Shader companionCubeShader("engine/resources/shaders/vertex-shader.glsl", "engine/resources/shaders/fragment-shader.glsl");
-    Shader corridorShader("engine/resources/shaders/vertex-shader.glsl", "engine/resources/shaders/fragment-shader.glsl");
+    Shader outlineShader("engine/resources/shaders/stencil-vertex.glsl", "engine/resources/shaders/stencil-fragment.glsl");
 
+    Shader galleryShader("engine/resources/shaders/vertex-shader.glsl", "engine/resources/shaders/fragment-shader.glsl");
+    Model gallery("engine/resources/models/gallery/gallery.obj");
+
+    Shader companionCubeShader("engine/resources/shaders/vertex-shader.glsl", "engine/resources/shaders/fragment-shader.glsl");
     Model companionCube("engine/resources/models/companion_cube/companion_cube.obj");
-    Model corridor("engine/resources/models/corridor/corridor.obj");
+
+    Shader grassShader("engine/resources/shaders/billboard-vertex.glsl", "engine/resources/shaders/billboard-fragment.glsl");
+    Model grassBillboard("engine/resources/models/realistic_grass/realistic_grass_tuff.obj");
 
     while (!glfwWindowShouldClose(window))
     {
@@ -83,63 +97,107 @@ int main()
         lastFrame = currentFrame;
 
         processInput(window);
+        ui.Update(window);
 
-        ui.Update();
-
+        // Allows for dynamic resolutions/aspect ratios
         int windowWidth;
         int windowHeight;
         glfwGetFramebufferSize(window, &windowWidth, &windowHeight);
         glViewport(0, 0, windowWidth, windowHeight);
 
-        
         // View/Projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.fov), (float)windowWidth / (float)windowHeight, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
 
-        corridorShader.Use();
-        corridorShader.SetVec3("directionalLight.direction", -0.2f, -1.0f, -0.3f);
-        corridorShader.SetVec3("directionalLight.ambientIntensity", 0.2f, 0.2f, 0.2f);
-        corridorShader.SetVec3("directionalLight.diffuseIntensity", 0.5f, 0.5f, 0.5f);
-        corridorShader.SetVec3("directionalLight.specularIntensity", 1.0f, 1.0f, 1.0f);
+        outlineShader.Use();
+        outlineShader.SetMat4("view", view);
+        outlineShader.SetMat4("projection", projection);
 
-        corridorShader.SetVec3("viewPosition", camera.position);
+        // Tells stencil mask to ignore the rest of the scene
+        glStencilMask(0x00);
 
-        corridorShader.SetMat4("projection", projection);
-        corridorShader.SetMat4("view", view);
+        // Gallery
+        galleryShader.Use();
+        galleryShader.SetBool("renderDepthBuffer", ui.GetDepthBufferBool());
+        galleryShader.SetVec3("directionalLight.direction", ui.GetDirectionalLightRotation().x, ui.GetDirectionalLightRotation().y, ui.GetDirectionalLightRotation().z);
+        galleryShader.SetVec3("directionalLight.ambientIntensity", ui.GetDirectionalLightAmbient().x, ui.GetDirectionalLightAmbient().y, ui.GetDirectionalLightAmbient().z);
+        galleryShader.SetVec3("directionalLight.diffuseIntensity", 0.5f, 0.5f, 0.5f);
+        galleryShader.SetVec3("directionalLight.specularIntensity", 1.0f, 1.0f, 1.0f);
+        galleryShader.SetVec3("viewPosition", camera.position);
+        galleryShader.SetMat4("projection", projection);
+        galleryShader.SetMat4("view", view);
 
-        glm::mat4 corridorModelMat = glm::mat4(1.0f);
-        corridorModelMat = glm::translate(corridorModelMat, glm::vec3(0.0f, 0.0f, 0.0f));
-        corridorShader.SetMat4("model", corridorModelMat);
+        glm::mat4 galleryModel = glm::mat4(1.0f);
+        galleryShader.SetMat4("model", galleryModel);
+        gallery.Draw(galleryShader);
 
-        corridor.Draw(corridorShader);
+         // Grass
+        std::vector<glm::vec3> vegetation 
+        {
+            glm::vec3(0.5f, 0.0f, -2.5f),
+            glm::vec3( 0.4f, 0.0f, -3.0f),
+            glm::vec3( 0.0f, 0.0f, -1.45f),
+            glm::vec3(-0.1f, 0.0f, -2.48f),
+            glm::vec3 (-0.3f, 0.0f, -3.52f)
+        };
+
+        grassShader.Use();
+        grassShader.SetMat4("projection", projection);
+        grassShader.SetMat4("view", view);
+
+        for (unsigned int i = 0; i < vegetation.size(); i++)
+        {
+            glm::mat4 vegetationModelMat = glm::mat4(1.0f);
+            vegetationModelMat = glm::translate(vegetationModelMat, vegetation[i]);
+            grassShader.SetMat4("model", vegetationModelMat);
+            grassBillboard.Draw(grassShader);
+        }
+
+        // Companion Cube - First render pass, drawing normally and writing to the stencil buffer
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        glStencilMask(0xFF);
 
         companionCubeShader.Use();
-        companionCubeShader.SetVec3("directionalLight.direction", -0.2f, -1.0f, -0.3f);
-        companionCubeShader.SetVec3("directionalLight.ambientIntensity", 0.2f, 0.2f, 0.2f);
+        companionCubeShader.SetBool("renderDepthBuffer", ui.GetDepthBufferBool());
+        companionCubeShader.SetVec3("directionalLight.direction", ui.GetDirectionalLightRotation().x, ui.GetDirectionalLightRotation().y, ui.GetDirectionalLightRotation().z);
+        companionCubeShader.SetVec3("directionalLight.ambientIntensity", ui.GetDirectionalLightAmbient().x, ui.GetDirectionalLightAmbient().y, ui.GetDirectionalLightAmbient().z);
         companionCubeShader.SetVec3("directionalLight.diffuseIntensity", 0.5f, 0.5f, 0.5f);
         companionCubeShader.SetVec3("directionalLight.specularIntensity", 1.0f, 1.0f, 1.0f);
-        
         companionCubeShader.SetVec3("viewPosition", camera.position);
-
         companionCubeShader.SetMat4("projection", projection);
         companionCubeShader.SetMat4("view", view);
-
         glm::mat4 cubeModel = glm::mat4(1.0f);
         companionCubeShader.SetMat4("model", cubeModel);
-
         float moveSpeed = 3.0f;
         float superPosition = glm::sin(glfwGetTime() * moveSpeed) * 0.5f;
         cubeModel = glm::translate(cubeModel, glm::vec3(ui.GetCubePositionOffset().x, superPosition + ui.GetCubePositionOffset().y, ui.GetCubePositionOffset().z));
-
         float rotationSpeed = glfwGetTime() * 50.0f;
-
         cubeModel = glm::rotate(cubeModel, glm::radians(rotationSpeed + ui.GetCubeRotationOffset().x), glm::vec3(1.0f, 0.0f, 0.0f));
         cubeModel = glm::rotate(cubeModel, glm::radians(rotationSpeed + ui.GetCubeRotationOffset().y), glm::vec3(0.0f, 1.0f, 0.0f));
         cubeModel = glm::rotate(cubeModel, glm::radians(rotationSpeed + ui.GetCubeRotationOffset().z), glm::vec3(0.0f, 0.0f, 1.0f));
         cubeModel = glm::scale(cubeModel, glm::vec3(ui.GetCubeScaleOffset().x, ui.GetCubeScaleOffset().y, ui.GetCubeScaleOffset().z));
-
         companionCubeShader.SetMat4("model", cubeModel);
         companionCube.Draw(companionCubeShader);
+
+        // Companion Cube - Second render pass, scaling up the model and drawing the size difference as a solid colour
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00);
+        glDisable(GL_DEPTH_TEST);
+
+        float outlineScale = 1.05f;
+        outlineShader.Use();
+        outlineShader.SetMat4("model", cubeModel);
+        cubeModel = glm::translate(cubeModel, glm::vec3(0.0f, 0.0f, 0.0f));
+        cubeModel = glm::rotate(cubeModel, glm::radians(ui.GetCubeRotationOffset().x), glm::vec3(1.0f, 0.0f, 0.0f));
+        cubeModel = glm::rotate(cubeModel, glm::radians(ui.GetCubeRotationOffset().y), glm::vec3(0.0f, 1.0f, 0.0f));
+        cubeModel = glm::rotate(cubeModel, glm::radians(ui.GetCubeRotationOffset().z), glm::vec3(0.0f, 0.0f, 1.0f));
+        cubeModel = glm::scale(cubeModel, glm::vec3(outlineScale, outlineScale, outlineScale));
+        outlineShader.SetMat4("model", cubeModel);
+        companionCube.Draw(outlineShader);
+
+        glStencilMask(0xFF);
+        glStencilFunc(GL_ALWAYS, 0, 0xFF);
+        glEnable(GL_DEPTH_TEST);
 
         ui.Render(window);
 

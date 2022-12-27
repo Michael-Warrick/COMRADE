@@ -6,6 +6,20 @@ in vec3 FragPos;
 in vec3 Normal;
 in vec2 TexCoords;
 
+uniform vec3 viewPosition;
+
+uniform bool renderDepthBuffer;
+
+float near = 0.1;
+float far = 100.0;
+
+float LinearizeDepth(float depth) 
+{
+   float z = depth * 2.0 - 1.0;
+
+   return (2.0 * near * far) / (far + near -z * (far - near));
+}
+
 struct DirectionalLight {
    vec3 direction;
 
@@ -19,19 +33,24 @@ uniform sampler2D texture_specular1;
 uniform sampler2D texture_normal1;
 uniform sampler2D texture_height1;
 
-uniform vec3 viewPosition;
 uniform DirectionalLight directionalLight;
-
 vec3 CalculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDirection);
 
 void main()
 {
-   vec3 norm = normalize(Normal);
-   vec3 viewDir = normalize(viewPosition - FragPos);
+   if (!renderDepthBuffer) 
+   {
+      vec3 norm = normalize(Normal);
+      vec3 viewDir = normalize(viewPosition - FragPos);
 
-   vec3 result = CalculateDirectionalLight(directionalLight, norm, viewDir);
-   FragColor = vec4(result, 1.0);
-   
+      vec3 result = CalculateDirectionalLight(directionalLight, norm, viewDir);
+      FragColor = vec4(result, 1.0);
+   }
+   else 
+   {
+      float depth = LinearizeDepth(gl_FragCoord.z) / far;
+      FragColor = vec4(vec3(depth), 1.0);
+   }
 }
 
 vec3 CalculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDirection) 

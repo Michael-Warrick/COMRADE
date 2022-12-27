@@ -1,1 +1,0 @@
- -static engine/external/glad/libglad.a engine/external/glfw/src/libglfw3.a engine/external/assimp/lib/libassimp.a engine/external/assimp/contrib/zlib/libzlibstatic.a -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lwinpthread -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
