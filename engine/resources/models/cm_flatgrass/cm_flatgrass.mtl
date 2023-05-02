@@ -1,0 +1,51 @@
+# Blender MTL File: 'cm_flatgrass.blend'
+# Material Count: 4
+
+newmtl Game-Ready_Bricks
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.400000 cm_flatgrass_bricks_normal.jpg
+map_Kd cm_flatgrass_bricks_diffuse.jpg
+map_Ns cm_flatgrass_bricks_roughness.jpg
+
+newmtl Game-Ready_Cement
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump cm_flatgrass_cement_normal.jpg
+map_Kd cm_flatgrass_cement_diffuse.jpg
+map_Ns cm_flatgrass_cement_roughness.jpg
+
+newmtl Material.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump cm_flatgrass_grass_normal.jpg
+map_Kd cm_flatgrass_grass_diffuse.jpg
+map_Ns cm_flatgrass_grass_roughness.jpg
+
+newmtl Sign
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

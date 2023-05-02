@@ -1,6 +1,6 @@
 #include "texture.hpp"
 
-unsigned int Texture::Load(char const* path) 
+unsigned int TextureData::Load(char const* path) 
 {
     glGenTextures(1, &textureID);
 
@@ -42,14 +42,19 @@ unsigned int Texture::Load(char const* path)
     return textureID;
 }
 
-unsigned int Texture::GetTexture() 
+unsigned int TextureData::GetTexture() 
 {
     return textureID;
 }
 
-void Texture::Bind(int textureEnum) 
+void TextureData::Bind(int textureEnum) 
 {
     if (textureEnum == 0) { glActiveTexture(GL_TEXTURE0); }
     if (textureEnum == 1) { glActiveTexture(GL_TEXTURE1); }
     glBindTexture(GL_TEXTURE_2D, textureID);
+}
+
+void TextureData::Free() 
+{
+    glDeleteTextures(1, &textureID);
 }

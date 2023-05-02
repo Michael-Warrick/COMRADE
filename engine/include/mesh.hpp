@@ -1,3 +1,5 @@
+#pragma once
+
 #include <glad/glad.h>
 
 #include <glm/glm.hpp>
@@ -33,11 +35,6 @@ struct Texture
 
 class Mesh
 {
-private:
-    void setup();
-
-    unsigned int VBO;
-    unsigned int EBO;
 public:
     Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
     void Draw(Shader &shader);
@@ -47,4 +44,9 @@ public:
     std::vector<Texture> textures;
 
     unsigned int VAO;
+private:
+    void setup();
+
+    unsigned int VBO;
+    unsigned int EBO;
 };

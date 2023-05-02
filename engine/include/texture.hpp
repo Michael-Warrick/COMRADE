@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 #include <glad/glad.h>
@@ -5,8 +7,13 @@
 
 #include <stb_image.h>
 
-class Texture 
+class TextureData
 {
+public:
+    unsigned int Load(char const* path);
+    unsigned int GetTexture();
+    void Bind(int textureEnum);
+    void Free();
 private:
     unsigned int textureID;
 
@@ -16,9 +23,4 @@ private:
 
     unsigned char* data;
     GLenum format;
-
-public:
-    unsigned int Load(char const* path);
-    unsigned int GetTexture();
-    void Bind(int textureEnum);
 };

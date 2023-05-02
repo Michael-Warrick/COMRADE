@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(M_Engine VERSION 0.0.1 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.20.0)
+project(COMRADE VERSION 0.0.1 LANGUAGES CXX)
 
 # Setting C++ Version to 2020
 set(CMAKE_CXX_STANDARD 20)
@@ -9,9 +9,21 @@ add_subdirectory(engine/external/glad)
 add_subdirectory(engine/external/glfw)
 add_subdirectory(engine/external/glm)
 add_subdirectory(engine/external/assimp)
+add_subdirectory(engine/external/nativefiledialog-extended)
+add_subdirectory(engine/external/bullet3)
 
 set(IMGUI_DIR engine/external/imgui-docking)
 include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
+
+set(IMGUIZMO_DIR engine/external/ImGuizmo)
+include_directories(${IMGUIZMO_DIR})
+
+set(BULLET_SRC_DIR engine/external/bullet3/src)
+include_directories(${BULLET_SRC_DIR})
+
+LINK_LIBRARIES(
+ BulletDynamics BulletCollision LinearMath
+)
 
 # Adding all source files
 add_executable(${PROJECT_NAME}
@@ -23,6 +35,18 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/texture.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/mesh.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/model.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/framebuffer.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/time.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/physics.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/entity.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/component.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/scripting.hpp
+    # ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/COMRADE.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/application.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/window.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/renderer.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/gameObject.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/scene.hpp
 
     # STB_IMAGE HEADER
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/stb_image.h
@@ -34,6 +58,16 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/texture.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/mesh.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/model.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/framebuffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/time.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/physics.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/component.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/scripting.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/application.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/window.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/renderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/gameObject.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/scene.cpp
 
     # STB_IMAGE IMPLEMENTATION
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/stb_image_impl.cpp
@@ -46,6 +80,9 @@ add_executable(${PROJECT_NAME}
     ${IMGUI_DIR}/imgui_demo.cpp
     ${IMGUI_DIR}/imgui_tables.cpp
     ${IMGUI_DIR}/imgui_widgets.cpp
+
+    # IMGUIZMO SOURCES
+    ${IMGUIZMO_DIR}/ImGuizmo.cpp
 )
 
 add_custom_target(copy_resources ALL
@@ -66,6 +103,7 @@ target_include_directories(${PROJECT_NAME}
         glfw
         glm
         assimp
+        nativefiledialog-extended
 )
 
 # As of right now, static linking is only available on Windows
@@ -77,6 +115,7 @@ if(WIN32)
         glfw
         glm
         assimp
+        nfd
     )
 
     # Telling the compiler to not launch a console window when app is built
@@ -88,5 +127,8 @@ else()
         glfw
         glm
         assimp
+        nfd
     )
 endif()
+
+target_compile_options(${PROJECT_NAME} PRIVATE -g)

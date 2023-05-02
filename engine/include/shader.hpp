@@ -13,7 +13,7 @@ class Shader
 public:
     unsigned int ID;
 
-    Shader(const char* vertexPath, const char* fragmentPath)
+    Shader(std::string vertexPath, std::string fragmentPath)
     {
         std::string vertexCode;
         std::string fragmentCode;
@@ -26,8 +26,8 @@ public:
 
         try
         {
-            vertexShaderFile.open(vertexPath);
-            fragmentShaderFile.open(fragmentPath);
+            vertexShaderFile.open(vertexPath.c_str());
+            fragmentShaderFile.open(fragmentPath.c_str());
 
             std::stringstream vertexShaderStream;
             std::stringstream fragmentShaderStream;
@@ -90,7 +90,6 @@ public:
 
         glDeleteShader(vertex);
         glDeleteShader(fragment);
-
     }
 
     void Use() 

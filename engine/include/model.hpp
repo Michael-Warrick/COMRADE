@@ -1,3 +1,5 @@
+#pragma once
+
 #include <glad/glad.h>
 
 #include <glm/glm.hpp>
@@ -23,6 +25,14 @@ unsigned int TextureFromFile(const char *path, const std::string &directory, boo
 
 class Model
 {
+public:
+    Model() = default;
+    Model(const char *path);
+    void Draw(Shader &shader);
+    std::string GetName();
+
+    // Get textures
+    std::vector<Texture> GetTextures();
 private:
     void load(std::string path);
     void processNode(aiNode *node, const aiScene *scene);
@@ -34,7 +44,4 @@ private:
     std::string directory;
 
     bool gammaCorrection;
-public:
-    Model(const char *path);
-    void Draw(Shader &shader);
 };

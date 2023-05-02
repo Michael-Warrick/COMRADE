@@ -1,11 +1,18 @@
 #include "camera.hpp"
 
-Camera::Camera(glm::vec3 cameraPosition, glm::vec3 cameraUp, float cameraYaw, float cameraPitch, float cameraMovementSpeed, float cameraMouseSensitivity, float cameraFOV) 
+Camera::Camera(glm::vec3 cameraPosition, glm::vec3 cameraUp, float cameraYaw, float cameraPitch, float cameraMovementSpeed, float cameraMouseSensitivity, float cameraFOV, float cameraHorizontalResolution, float cameraVerticalResolution, float cameraNearPlane, float cameraFarPlane)
 {
     position = cameraPosition;
     worldUp = cameraUp;
     yaw = cameraYaw;
     pitch = cameraPitch;
+    movementSpeed = cameraMovementSpeed;
+    mouseSensitivity = cameraMouseSensitivity;
+    fov = cameraFOV;
+    horizontalResolution = cameraHorizontalResolution;
+    verticalResolution = cameraVerticalResolution;
+    nearPlane = cameraNearPlane;
+    farPlane = cameraFarPlane;
 
     updateCameraVectors();
 }
@@ -23,6 +30,11 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
 glm::mat4 Camera::GetViewMatrix()
 {
     return glm::lookAt(position, position + front, up);
+}
+
+glm::mat4 Camera::GetProjectionMatrix()
+{
+    return glm::perspective(glm::radians(fov), horizontalResolution / verticalResolution, nearPlane, farPlane);
 }
 
 void Camera::ProcessKeyboard(Movement direction, float deltaTime)

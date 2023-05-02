@@ -13,6 +13,14 @@ void Model::Draw(Shader &shader)
     }
 }
 
+std::string Model::GetName() 
+{
+    // cut off the path and add the extension back
+    std::string name = directory.substr(directory.find_last_of('/') + 1);
+    name = name + ".obj";
+    return name;
+}
+
 void Model::load(std::string path) 
 {
     Assimp::Importer importer;
@@ -234,4 +242,9 @@ unsigned int TextureFromFile(const char *path, const std::string &directory, boo
     }
     
     return textureID;
+}
+
+std::vector<Texture> Model::GetTextures()
+{
+    return textures_loaded;
 }
