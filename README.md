@@ -1,7 +1,7 @@
-# M_Engine 
-![M_Engine current state](engine/resources/img/ref-current/COMRADE.png)
+# COMRADE
+![COMRADE current state](engine/resources/img/ref-current/COMRADE.png)
 
-M_Engine is a cross-platform game engine written in C++ and OpenGL, with an emphasis on performance.
+COMRADE is a cross-platform game engine written in C++ and OpenGL, with an emphasis on performance.
 
 ## Table of Contents
 1. [Introduction](#introduction)
