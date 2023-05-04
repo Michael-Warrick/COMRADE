@@ -4,26 +4,32 @@ project(COMRADE VERSION 0.0.1 LANGUAGES C CXX)
 # Setting C++ Version to 2020
 set(CMAKE_CXX_STANDARD 20)
 
-# External library locations
+# ASSIMP Configuration
 set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
 set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
 set(ASSIMP_BUILD_OBJ_IMPORTER ON CACHE BOOL "" FORCE)
 set(ASSIMP_INSTALL OFF CACHE BOOL "" FORCE)
+set(ASSIMP_BUILD_ALL_IMPORTERS_BY_DEFAULT OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(engine/vendor/assimp)
 
-# Set the options to exclude demos, extras, and unit tests
-# set(BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
-# set(BUILD_BULLET2_DEMOS OFF CACHE BOOL "" FORCE)
-# set(BUILD_CPU_DEMOS OFF CACHE BOOL "" FORCE)
-# set(BUILD_OPENGL3_DEMOS OFF CACHE BOOL "" FORCE)
-# set(BUILD_BULLET3_EXAMPLES OFF CACHE BOOL "" FORCE)
+# Bullet3 Configuration
+set(BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
+set(BUILD_BULLET2_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_CPU_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_OPENGL3_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_BULLET3_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(BUILD_CPU_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_EXTRAS OFF CACHE BOOL "" FORCE)
+set(BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
+set(BUILD_BULLET2_DEMOS OFF CACHE BOOL "" FORCE)
+set(BUILD_OPENGL3_DEMOS OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(engine/vendor/bullet3)
 
 
-add_subdirectory(engine/vendor/glad)
+add_subdirectory(engine/vendor/cmake-glad2)
 add_subdirectory(engine/vendor/glfw)
 add_subdirectory(engine/vendor/glm)
 add_subdirectory(engine/vendor/nativefiledialog-extended)
@@ -115,7 +121,7 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/engine/include>
-        glad
+        cmake-glad2
         glfw
         glm
         assimp
@@ -127,7 +133,7 @@ if(WIN32)
     # Linking statically
     target_link_libraries(${PROJECT_NAME}
         -static
-        glad
+        cmake-glad2
         glfw
         glm
         assimp
@@ -139,7 +145,7 @@ if(WIN32)
 else()
     # Linking dynamically
     target_link_libraries(${PROJECT_NAME}
-        glad
+        cmake-glad2
         glfw
         glm
         assimp
