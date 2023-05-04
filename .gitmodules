@@ -4,8 +4,8 @@
 [submodule "engine/vendor/bullet3"]
 	path = engine/vendor/bullet3
 	url = https://github.com/bulletphysics/bullet3.git
-[submodule "engine/vendor/glad2"]
-	path = engine/vendor/glad2
+[submodule "engine/vendor/glad"]
+	path = engine/vendor/glad
 	url = https://github.com/Dav1dde/glad.git
 [submodule "engine/vendor/glfw"]
 	path = engine/vendor/glfw
@@ -23,3 +23,6 @@
 [submodule "engine/vendor/nativefiledialog-extended"]
 	path = engine/vendor/nativefiledialog-extended
 	url = https://github.com/btzy/nativefiledialog-extended
+[submodule "engine/vendor/glad"]
+	path = engine/vendor/glad
+	url = https://github.com/Dav1dde/glad.git
