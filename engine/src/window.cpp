@@ -59,10 +59,11 @@ Window::Window()
     // Enable vsync
     glfwSwapInterval(1);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
+    int version = gladLoadGL(glfwGetProcAddress);
+    if (version == 0) {
+        printf("Failed to initialize OpenGL context\n");
         throw std::runtime_error("Failed to initialize GLAD");
-    }  
+    }
 }
 
 Window::Window(int width, int height, const char *title)

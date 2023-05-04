@@ -1,29 +1,45 @@
 cmake_minimum_required(VERSION 3.20.0)
-project(COMRADE VERSION 0.0.1 LANGUAGES CXX)
+project(COMRADE VERSION 0.0.1 LANGUAGES C CXX)
 
 # Setting C++ Version to 2020
 set(CMAKE_CXX_STANDARD 20)
 
 # External library locations
-add_subdirectory(engine/external/glad)
-add_subdirectory(engine/external/glfw)
-add_subdirectory(engine/external/glm)
-add_subdirectory(engine/external/assimp)
-add_subdirectory(engine/external/nativefiledialog-extended)
-add_subdirectory(engine/external/bullet3)
+set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
+set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
+set(ASSIMP_BUILD_OBJ_IMPORTER ON CACHE BOOL "" FORCE)
+set(ASSIMP_INSTALL OFF CACHE BOOL "" FORCE)
 
-set(IMGUI_DIR engine/external/imgui-docking)
-include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
+add_subdirectory(engine/vendor/assimp)
 
-set(IMGUIZMO_DIR engine/external/ImGuizmo)
-include_directories(${IMGUIZMO_DIR})
+# Set the options to exclude demos, extras, and unit tests
+# set(BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
+# set(BUILD_BULLET2_DEMOS OFF CACHE BOOL "" FORCE)
+# set(BUILD_CPU_DEMOS OFF CACHE BOOL "" FORCE)
+# set(BUILD_OPENGL3_DEMOS OFF CACHE BOOL "" FORCE)
+# set(BUILD_BULLET3_EXAMPLES OFF CACHE BOOL "" FORCE)
 
-set(BULLET_SRC_DIR engine/external/bullet3/src)
+add_subdirectory(engine/vendor/bullet3)
+
+
+add_subdirectory(engine/vendor/glad)
+add_subdirectory(engine/vendor/glfw)
+add_subdirectory(engine/vendor/glm)
+add_subdirectory(engine/vendor/nativefiledialog-extended)
+
+set(BULLET_SRC_DIR engine/vendor/bullet3/src)
 include_directories(${BULLET_SRC_DIR})
 
 LINK_LIBRARIES(
  BulletDynamics BulletCollision LinearMath
 )
+
+set(IMGUI_DIR engine/vendor/imgui-docking)
+include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
+
+set(IMGUIZMO_DIR engine/vendor/ImGuizmo)
+include_directories(${IMGUIZMO_DIR})
 
 # Adding all source files
 add_executable(${PROJECT_NAME}

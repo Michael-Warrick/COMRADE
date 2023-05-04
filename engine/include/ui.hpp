@@ -4,16 +4,16 @@
 #include <cmath>
 #include <regex>
 
-#include <glad/glad.h>
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
-#include "../external/imgui-docking/imgui.h"
-#include "../external/imgui-docking/backends/imgui_impl_glfw.h"
-#include "../external/imgui-docking/backends/imgui_impl_opengl3.h"
 #define IMGUI_DEFINE_MATH_OPERATORS
-#include "../external/imgui-docking/imgui_internal.h"
+#include "../vendor/imgui-docking/imgui.h"
+#include "../vendor/imgui-docking/backends/imgui_impl_glfw.h"
+#include "../vendor/imgui-docking/backends/imgui_impl_opengl3.h"
+#include "../vendor/imgui-docking/imgui_internal.h"
 
-#include "../external/nativefiledialog-extended/src/include/nfd.h"
+#include "../vendor/nativefiledialog-extended/src/include/nfd.h"
 
 #include "texture.hpp"
 #include "scene.hpp"

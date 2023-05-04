@@ -20,3 +20,6 @@
 [submodule "engine/vendor/nativefiledialog-extended"]
 	path = engine/vendor/nativefiledialog-extended
 	url = https://github.com/btzy/nativefiledialog-extended
+[submodule "engine/vendor/cmake-glad2"]
+	path = engine/vendor/cmake-glad2
+	url = https://github.com/Michael-Warrick/cmake-glad2.git
