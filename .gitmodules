@@ -1,0 +1,25 @@
+[submodule "engine/vendor/assimp"]
+	path = engine/vendor/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "engine/vendor/bullet3"]
+	path = engine/vendor/bullet3
+	url = https://github.com/bulletphysics/bullet3.git
+[submodule "engine/vendor/glad2"]
+	path = engine/vendor/glad2
+	url = https://github.com/Dav1dde/glad.git
+[submodule "engine/vendor/glfw"]
+	path = engine/vendor/glfw
+	url = https://github.com/glfw/glfw
+[submodule "engine/vendor/glm"]
+	path = engine/vendor/glm
+	url = https://github.com/g-truc/glm
+[submodule "engine/vendor/imgui-docking"]
+	path = engine/vendor/imgui-docking
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
+[submodule "engine/vendor/imguizmo"]
+	path = engine/vendor/imguizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo
+[submodule "engine/vendor/nativefiledialog-extended"]
+	path = engine/vendor/nativefiledialog-extended
+	url = https://github.com/btzy/nativefiledialog-extended
