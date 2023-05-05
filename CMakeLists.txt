@@ -5,6 +5,7 @@ project(COMRADE VERSION 0.0.1 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 20)
 
 # ASSIMP Configuration
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
 set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
@@ -28,7 +29,6 @@ set(BUILD_OPENGL3_DEMOS OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(engine/vendor/bullet3)
 
-
 add_subdirectory(engine/vendor/cmake-glad2)
 add_subdirectory(engine/vendor/glfw)
 add_subdirectory(engine/vendor/glm)
@@ -38,7 +38,7 @@ set(BULLET_SRC_DIR engine/vendor/bullet3/src)
 include_directories(${BULLET_SRC_DIR})
 
 LINK_LIBRARIES(
- BulletDynamics BulletCollision LinearMath
+    BulletDynamics BulletCollision LinearMath
 )
 
 set(IMGUI_DIR engine/vendor/imgui-docking)
@@ -49,6 +49,7 @@ include_directories(${IMGUIZMO_DIR})
 
 # Adding all source files
 add_executable(${PROJECT_NAME}
+
     # HEADER FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/definitions.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/ui.hpp
@@ -63,6 +64,7 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/entity.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/component.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/scripting.hpp
+
     # ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/COMRADE.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/application.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/include/window.hpp
@@ -95,10 +97,10 @@ add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/src/stb_image_impl.cpp
 
     # IMGUI SOURCES + BACKENDS
-    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp 
-    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp 
+    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
     ${IMGUI_DIR}/imgui.cpp
-    ${IMGUI_DIR}/imgui_draw.cpp 
+    ${IMGUI_DIR}/imgui_draw.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
     ${IMGUI_DIR}/imgui_tables.cpp
     ${IMGUI_DIR}/imgui_widgets.cpp
@@ -119,13 +121,13 @@ add_dependencies(${PROJECT_NAME} copy_resources)
 # Including added libraries
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        $<INSTALL_INTERFACE:include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/engine/include>
-        cmake-glad2
-        glfw
-        glm
-        assimp
-        nativefiledialog-extended
+    $<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/engine/include>
+    cmake-glad2
+    glfw
+    glm
+    assimp
+    nativefiledialog-extended
 )
 
 # As of right now, static linking is only available on Windows

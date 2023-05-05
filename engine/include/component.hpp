@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "btBulletDynamicsCommon.h"
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btAlignedObjectArray.h"

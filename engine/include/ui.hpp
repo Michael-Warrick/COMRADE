@@ -3,6 +3,8 @@
 #include <iostream>
 #include <cmath>
 #include <regex>
+#include <memory>
+#include <unordered_map>
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
