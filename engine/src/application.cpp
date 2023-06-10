@@ -2,11 +2,13 @@
 
 void Application::Run()
 {
-    UI ui(platformWindow.GetWindow(), "#version 410 core");
-    ui.SetSceneInfo(renderer.GetScene());
-    ui.SetShaderInfo(renderer.GetShaders());
-
     Framebuffer framebuffer(1920, 1080);
+    
+    UI ui(platformWindow.GetWindow(), "#version 410 core");
+    Scene& scene = renderer.GetScene();
+
+    ui.SetSceneInfo(scene);
+    ui.SetShaderInfo(renderer.GetShaders());
 
     while (platformWindow.IsOpen())
     {
@@ -15,8 +17,7 @@ void Application::Run()
         
         ui.Update();
         
-        renderer.SetSceneInfo(ui.GetScene());
-        // RENDER SCENE ...
+        renderer.SetSceneInfo(scene);
         renderer.Render();
         
         framebuffer.BindColorTexture();

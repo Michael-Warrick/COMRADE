@@ -177,6 +177,7 @@ void UI::InteractionsBar()
     if (ImGui::ImageButton("Play", playButtonIconID, buttonSize, ImVec2(0, 1), ImVec2(1, 0), ImVec4(0, 0, 0, 0), ImVec4(1, 1, 1, 1)))
     {
         gameIsRunning = true;
+        std::cout << "Game is running" << std::endl;
     }
 
     ImGui::SameLine();
@@ -184,6 +185,7 @@ void UI::InteractionsBar()
     if (ImGui::ImageButton("Pause", pauseButtonIconID, buttonSize, ImVec2(0, 0), ImVec2(1, 1), ImVec4(0, 0, 0, 0), ImVec4(1, 1, 1, 1)))
     {
         gameIsRunning = false;
+        std::cout << "Game has stopped" << std::endl;
     }
 
     // End the ImGui window

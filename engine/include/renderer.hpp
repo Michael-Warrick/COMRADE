@@ -32,8 +32,8 @@ public:
     void DrawGizmos();
     void DrawUI();
 
-    Scene GetScene() { return scene; }
-    void SetSceneInfo(Scene scene) { this->scene = scene; }
+    Scene& GetScene() { return scene; }
+    void SetSceneInfo(const Scene& scene) { this->scene = scene; }
 
     std::unordered_map<std::string, Shader> GetShaders() { return shaders; }    
     
